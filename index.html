@@ -1,303 +1,183 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Abhishek Mall — Data Scientist and Machine Learning researcher building intelligent methods for complex scientific data.">
-  <title>Abhishek Mall — Data Scientist & ML</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name — AI Engineer Portfolio</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="progress"></div>
 
-  <header class="nav-wrap">
-    <nav class="nav container">
-      <a class="brand" href="#top">AM<span>.</span></a>
-      <div class="nav-links">
-        <a href="#work">Work</a>
-        <a href="#experience">Experience</a>
-        <a href="#research">Research</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <a class="nav-cta" href="mailto:abhishekmall101@gmail.com">Let's talk ↗</a>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">Abhishek Mall</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </nav>
-  </header>
 
-  <main id="top">
-    <section class="hero container">
-      <div class="hero-copy">
-        <div class="eyebrow"><span class="dot"></span> DATA SCIENCE · MACHINE LEARNING · SCIENTIFIC COMPUTING</div>
-        <h1>I make complex data <em>understandable.</em></h1>
-        <p class="hero-lead">
-          Data Scientist and ML researcher with a physics background. I build
-          models, algorithms and data workflows that extract signal and insight
-          from large, noisy and high-dimensional datasets.
-        </p>
-        <div class="hero-actions">
-          <a class="button primary" href="#work">Explore my work <span>↓</span></a>
-          <a class="button secondary" href="https://github.com/abhishek-mall" target="_blank" rel="noreferrer">GitHub ↗</a>
-        </div>
-        <div class="hero-meta">
-          <span>Hamburg, Germany</span>
-          <span>PhD · Physics</span>
-          <span>ML · Statistics · Imaging</span>
-        </div>
-      </div>
-
-      <div class="hero-visual">
-        <div class="portrait-frame">
-          <div class="portrait-glow"></div>
-          <img src="assets/profile.png" alt="Portrait of Abhishek Mall">
-          <div class="portrait-tag">
-            <span class="status"></span>
-            Available for conversations
-          </div>
-        </div>
-        <div class="orbit orbit-1"></div>
-        <div class="orbit orbit-2"></div>
-        <div class="data-chip chip-a">10⁶+ images</div>
-        <div class="data-chip chip-b">ML / DL</div>
-        <div class="data-chip chip-c">GPU · HPC</div>
-      </div>
-    </section>
-
-    <section class="signal-strip">
-      <div class="container signal-grid">
-        <div><strong>01</strong><span>Find patterns in messy data</span></div>
-        <div><strong>02</strong><span>Build robust ML methods</span></div>
-        <div><strong>03</strong><span>Scale scientific computation</span></div>
-        <div><strong>04</strong><span>Communicate complex results</span></div>
-      </div>
-    </section>
-
-    <section class="section container intro" id="about">
-      <div class="chapter-head"><div class="section-kicker">01</div><div><span class="chapter-label">Profile</span><span class="chapter-note">What I do & how I think</span></div></div>
-      <div class="intro-grid">
-        <h2>The short version.</h2>
-        <div class="intro-copy">
-          <p class="big-copy">
-            I work at the intersection of <strong>data science, machine learning
-            and computational science</strong> — turning raw measurements into
-            models, decisions and scientific insight.
-          </p>
-          <p>
-            My work has involved millions of diffraction images, low-signal
-            imaging, Bayesian analysis, unsupervised learning, deep neural
-            networks, optimization and GPU/HPC workflows. The common thread:
-            taking a difficult data problem and building a practical computational
-            way through it.
-          </p>
-          <div class="skill-pills">
-            <span>Python</span><span>PyTorch</span><span>TensorFlow</span>
-            <span>Scikit-learn</span><span>Statistics</span><span>Computer Vision</span>
-            <span>SQL</span><span>HPC / GPU</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section container" id="work">
-      <div class="section-heading">
-        <div>
-          <div class="chapter-head"><div class="section-kicker">02</div><div><span class="chapter-label">Selected Work</span><span class="chapter-note">Data science & machine learning</span></div></div>
-          <h2>Problems I've built around.</h2>
-        </div>
-        <p>Research-grade problems. Production-minded thinking.</p>
-      </div>
-
-      <div class="project-grid">
-        <article class="project project-featured">
-          <div class="project-number">01</div>
-          <div class="project-content">
-            <div class="project-label">DATA SCIENCE · UNSUPERVISED ML</div>
-            <h3>Finding structure in millions of diffraction images</h3>
-            <p>
-              Developed Bayesian and machine-learning approaches to classify,
-              embed and characterize large-scale X-ray imaging datasets from
-              EuXFEL experiments. Unsupervised learning revealed reaction
-              trajectories and structural changes in biological samples.
-            </p>
-            <div class="project-tags"><span>Representation Learning</span><span>Clustering</span><span>Bayesian Methods</span><span>Large-scale Data</span></div>
-          </div>
-          <div class="project-visual visual-images">
-            <div class="scatter">
-              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+    <main class="container">
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <span class="badge">Updating Website Everyday</span>
+                <h1 class="typing-text">Hi, I am <span class="highlight">Abhishek Mall</span></h1>
+                <h2 class="role-title">Machine Learning Engineer</h2>
+                <p class="tagline">Building intelligent systems using deep learning, LLMs, and data-driven infrastructure.</p>
             </div>
-            <span>high-dimensional → structure</span>
-          </div>
-        </article>
+        </section>
 
-        <article class="project">
-          <div class="project-number">02</div>
-          <div class="project-label">OPTIMIZATION · COMPUTATIONAL IMAGING</div>
-          <h3>Optimization without reliable gradients</h3>
-          <p>
-            Designed a derivative-free optimization algorithm for holographic
-            single-particle imaging, robust to noisy nonlinear parameter spaces
-            and extendable to heterogeneous nanoscale objects.
-          </p>
-          <div class="project-tags"><span>Optimization</span><span>Numerical Methods</span><span>Noise Robustness</span></div>
-        </article>
-
-        <article class="project">
-          <div class="project-number">03</div>
-          <div class="project-label">DEEP LEARNING · COMPUTER VISION</div>
-          <h3>Learning to design nanophotonic devices</h3>
-          <p>
-            Built a cyclical deep-learning framework combining neural networks
-            and genetic algorithms for inverse and forward design of
-            nanophotonic metasurfaces.
-          </p>
-          <div class="project-tags"><span>Deep Learning</span><span>Autoencoders</span><span>Genetic Algorithms</span></div>
-        </article>
-
-        <article class="project project-wide">
-          <div class="project-number">04</div>
-          <div class="project-content">
-            <div class="project-label">ML ENGINEERING · LOW-SIGNAL DATA</div>
-            <h3>Making weak signals computationally useful</h3>
-            <p>
-              Developed maximum-likelihood pattern-search methods for holographic
-              single-particle imaging at XFELs, targeting weakly scattering
-              nanoscale objects while improving robustness to noise,
-              heterogeneity and computational scale.
-            </p>
-            <div class="project-tags"><span>Maximum Likelihood</span><span>Pattern Search</span><span>Scalable Computing</span><span>Image Analysis</span></div>
-          </div>
-          <div class="metric-card">
-            <small>CORE APPROACH</small>
-            <strong>Signal → Model → Insight</strong>
-            <span>Build the computational layer that makes difficult measurements interpretable.</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section dark-section chapter-section" id="experience">
-      <div class="container">
-        <div class="chapter-head"><div class="section-kicker">03</div><div><span class="chapter-label">Experience</span><span class="chapter-note">Where I have applied it</span></div></div>
-        <div class="experience-grid">
-          <div>
-            <h2>Deep technical experience.<br><em>Transferable by design.</em></h2>
-            <p class="muted">
-              Years of research have meant owning problems end-to-end: framing
-              the question, wrangling data, designing algorithms, training
-              models, running computation and communicating the result.
-            </p>
-          </div>
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="time">2020 — PRESENT</div>
-              <div>
-                <h3>Max Planck Institute for the Structure and Dynamics of Matter</h3>
-                <p>Computational Nanoscale Imaging · Data analysis · Machine learning · Scientific computing</p>
-              </div>
+        <section id="about" class="section">
+            <h3 class="section-title">● About</h3>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>I specialize in bridging the gap between complex research and production-ready AI. With a background in [Your Field], I focus on [NLP/CV/LLM Ops].</p>
+                    <p>My current interests include: <strong>Agentic Workflows, Efficient Fine-tuning, and Scalable Data Pipelines.</strong></p>
+                </div>
             </div>
-            <div class="timeline-item">
-              <div class="time">2019 — 2020</div>
-              <div>
-                <h3>IIT Bombay</h3>
-                <p>Deep learning for inverse design of nanophotonic devices</p>
-              </div>
+        </section>
+
+        <section id="skills" class="section">
+            <h3 class="section-title">■ Technical Stack</h3>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h4>ML Frameworks</h4>
+                    <div class="tags">
+                        <span>PyTorch</span><span>TensorFlow</span><span>HuggingFace</span><span>Scikit-learn</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h4>Programming</h4>
+                    <div class="tags">
+                        <span>Python</span><span>SQL</span><span>C++</span><span>JavaScript</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h4>Infrastructure</h4>
+                    <div class="tags">
+                        <span>Docker</span><span>AWS</span><span>Kubernetes</span><span>MLflow</span>
+                    </div>
+                </div>
             </div>
-            <div class="timeline-item">
-              <div class="time">2017</div>
-              <div>
-                <h3>Laboratoire de Physique des Solides</h3>
-                <p>Scattering theory and computational modeling</p>
-              </div>
+        </section>
+
+        <section id="projects" class="section">
+            <h3 class="section-title">⬢ Selected Projects</h3>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <span class="folder-icon">📂</span>
+                        <div class="project-links">
+                            <a href="#">GH</a>
+                            <a href="#">🔗</a>
+                        </div>
+                    </div>
+                    <h4>LLM-Agent Framework</h4>
+                    <p>An autonomous agent system designed to automate multi-step data analysis tasks using GPT-4 and LangChain.</p>
+                    <div class="project-tech">Python • LangChain • OpenAI</div>
+                </div>
+                <div class="project-card">
+                    <h4>Real-time Object Detection</h4>
+                    <p>Distributed computer vision pipeline for high-speed edge devices using YOLOv10 and TensorRT.</p>
+                    <div class="project-tech">C++ • PyTorch • NVIDIA Jetson</div>
+                </div>
+                <div class="project-card">
+                    <h4>Transformer-based Forecasting</h4>
+                    <p>Time-series prediction model for financial markets achieving 15% better accuracy than traditional LSTMs.</p>
+                    <div class="project-tech">PyTorch • Pandas • NumPy</div>
+                </div>
             </div>
-          </div>
-        </div>
+        </section>
 
-        <div class="capability-grid">
-          <div class="capability"><span>01</span><h4>Data Analysis</h4><p>Statistical analysis, dimensionality reduction, feature extraction, visualization.</p></div>
-          <div class="capability"><span>02</span><h4>Machine Learning</h4><p>Deep learning, unsupervised learning, autoencoders, transfer learning.</p></div>
-          <div class="capability"><span>03</span><h4>ML Engineering</h4><p>Python pipelines, GPU acceleration, HPC, Slurm and scalable computation.</p></div>
-          <div class="capability"><span>04</span><h4>Problem Solving</h4><p>Optimization, probabilistic methods, noisy inverse problems and scientific modeling.</p></div>
-        </div>
-      </div>
-    </section>
+        <section id="experience" class="section">
+            <h3 class="section-title">▲ Experience</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="time-meta">
+                        <span class="date">08/2025 — Present</span>
+                        <span class="company">Max Planck Institute for the Structure and Dynamics of Matter</span>
+                        <span class="location">Hamburg, Germany</span>
+                    </div>
+                    <div class="time-content">
+                        <h5>Postdoctoral Researcher - AI & Data Science</h5>
+                        <ul>
+                            <li>Leading development of software interactive ML pipeline for high-throughput experimental systems.</li>
+                        </ul>
+                    </div>
+                </div>
 
-    <section class="section container chapter-section research-section" id="research">
-      <div class="section-heading">
-        <div>
-          <div class="chapter-head"><div class="section-kicker">04</div><div><span class="chapter-label">Research</span><span class="chapter-note">Peer-reviewed evidence & depth</span></div></div>
-          <h2>Evidence, not just keywords.</h2>
-        </div>
-        <p>Peer-reviewed work spanning ML, imaging and computational design.</p>
-      </div>
+                <div class="timeline-item">
+                    <div class="time-meta">
+                        <span class="date">10/2020 — 07/2025</span>
+                        <span class="company">Max Planck Institute for the Structure and Dynamics of Matter</span>
+                        <span class="location">Hamburg, Germany</span>
+                    </div>
+                    <div class="time-content">
+                        <h5>PhD Researcher</h5>
+                        <ul>
+                            <li>Designed and deployed end-to-end ML pipelines processing 1.2 PB of time-series and image data.</li>
+                            <li>Built predictive ML models for automated experiment evaluation and anomaly detection.</li>
+                            <li>Reduced iteration cycles by 40% and improved system throughput by 1.67×.</li>
+                        </ul>
+                    </div>
+                </div>
 
-      <div class="pub-list">
-        <a class="publication" href="https://doi.org/10.1002/apxr.202400089" target="_blank" rel="noreferrer">
-          <span class="pub-year">2024</span>
-          <span class="pub-title">Deep Learning based Variational Auto-Encoder for Classification of Quantum and Classical States of Light</span>
-          <span class="pub-arrow">↗</span>
-        </a>
-        <a class="publication" href="https://doi.org/10.1103/PhysRevApplied.19.054027" target="_blank" rel="noreferrer">
-          <span class="pub-year">2023</span>
-          <span class="pub-title">Holographic Single-Particle Imaging for Weakly Scattering, Heterogeneous Nanoscale Objects</span>
-          <span class="pub-arrow">↗</span>
-        </a>
-        <a class="publication" href="https://doi.org/10.1038/s41598-020-76313-2" target="_blank" rel="noreferrer">
-          <span class="pub-year">2020</span>
-          <span class="pub-title">A Cyclical Deep Learning Based Framework for Simultaneous Inverse and Forward Design of Nanophotonic Metasurfaces</span>
-          <span class="pub-arrow">↗</span>
-        </a>
-        <a class="publication" href="https://doi.org/10.1088/1361-6463/abbd08" target="_blank" rel="noreferrer">
-          <span class="pub-year">2020</span>
-          <span class="pub-title">Fast Design of Plasmonic Metasurfaces Enabled by Deep Learning</span>
-          <span class="pub-arrow">↗</span>
-        </a>
-      </div>
+                <div class="timeline-item">
+                    <div class="time-meta">
+                        <span class="date">07/2020 — 09/2020</span>
+                        <span class="company">Syracuse University</span>
+                        <span class="location">New York, USA (Remote)</span>
+                    </div>
+                    <div class="time-content">
+                        <h5>ML Researcher</h5>
+                        <ul>
+                            <li>Developed a semi-supervised deep learning model for real-time classification on 100M+ data samples.</li>
+                            <li>Achieved ≥90% accuracy with 0.001 s inference latency.</li>
+                        </ul>
+                    </div>
+                </div>
 
-      <div class="achievement-row">
-        <div><strong>10/10</strong><span>Master's thesis grade</span></div>
-        <div><strong>138 / 10k+</strong><span>JAM Physics rank</span></div>
-        <div><strong>Best Talk</strong><span>CFEL Symposium 2024</span></div>
-      </div>
+                <div class="timeline-item">
+                    <div class="time-meta">
+                        <span class="date">02/2019 — 06/2020</span>
+                        <span class="company">IIT Bombay</span>
+                        <span class="location">Mumbai, India</span>
+                    </div>
+                    <div class="time-content">
+                        <h5>Research Assistant</h5>
+                        <ul>
+                            <li>Developed generative deep learning models for data-driven nano-scale industrial design.</li>
+                            <li>Enabled 1000× faster design cycles by replacing simulation-heavy workflows with ML-based inference.</li>
+                            <li>Built automated ML pipelines for model training and evaluation.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      <div class="research-links">
-        <a href="https://scholar.google.com/citations?user=wdDWv4YAAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar ↗</a>
-        <a href="https://www.linkedin.com/in/abhishek-mall/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-        <a href="https://github.com/abhishek-mall" target="_blank" rel="noreferrer">GitHub ↗</a>
-      </div>
-    </section>
+        <section id="contact" class="section contact-section">
+            <h3 class="section-title">✦ Get In Touch</h3>
+            <div class="contact-box">
+                <p>I'm currently looking for new opportunities in ML Research or Engineering.</p>
+                <a href="mailto:your.email@example.com" class="btn primary">Say Hello</a>
+            </div>
+        </section>
 
-    <section class="section contact-section chapter-section" id="contact">
-      <div class="container contact-inner">
-        <div class="chapter-head"><div class="section-kicker">05</div><div><span class="chapter-label">Contact</span><span class="chapter-note">Let’s work on something difficult</span></div></div>
-        <h2>Have a hard data problem?</h2>
-        <p>
-          I'm interested in teams where rigorous data science, machine learning
-          and computational thinking can create a real-world advantage.
-        </p>
-        <a class="contact-email" href="mailto:abhishekmall101@gmail.com">abhishekmall101@gmail.com <span>↗</span></a>
-        <div class="contact-links">
-          <a href="https://github.com/abhishek-mall" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="https://www.linkedin.com/in/abhishek-mall/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href="https://scholar.google.com/citations?user=wdDWv4YAAAAJ&hl=en" target="_blank" rel="noreferrer">Scholar</a>
-        </div>
-      </div>
-    </section>
-  </main>
+    </main>
 
-  <footer class="footer container">
-    <span>© 2026 Abhishek Mall</span>
-    <span>Built for curious people who care about data.</span>
-  </footer>
+    <footer class="footer">
+        <p>Built with JetBrains Mono & Inter &middot; 2026</p>
+    </footer>
 
-  <script>
-    const progress = document.querySelector('.progress');
-    window.addEventListener('scroll', () => {
-      const h = document.documentElement;
-      const pct = h.scrollTop / (h.scrollHeight - h.clientHeight) * 100;
-      progress.style.width = pct + '%';
-    });
-  </script>
+    <script src="script.js"></script>
 </body>
 </html>
