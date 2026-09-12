@@ -3,12 +3,21 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description" content="Abhishek Mall — Data Scientist and ML researcher turning complex scientific data into useful models.">
+
+    <meta
+      name="description"
+      content="Abhishek Mall — Data Scientist and ML researcher turning complex scientific data into useful models."
+    >
+
     <title>Abhishek Mall — Data Scientist &amp; ML</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=DM+Sans:wght@400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=DM+Sans:wght@400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap"
+      rel="stylesheet"
+    >
 
     <link rel="stylesheet" href="style.css">
 
@@ -17,14 +26,89 @@
       .hero h1 {
         line-height: 0.98;
       }
+
+      /*
+       * About heading refinement:
+       * keep the large "I" visually separate from
+       * "make difficult data useful."
+       */
+      .about-lead {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        column-gap: clamp(24px, 3vw, 48px);
+      }
+
+      .about-lead .giant-letter {
+        position: static;
+        display: block;
+        font-size: clamp(180px, 20vw, 300px);
+        line-height: 0.72;
+        margin: 0;
+      }
+
+      .about-lead h2 {
+        margin: 0;
+      }
+
+      /* About capability list */
+      .about-points {
+        margin: 30px 0;
+        padding-left: 22px;
+        color: #5d7071;
+      }
+
+      .about-points li {
+        margin-bottom: 16px;
+        padding-left: 6px;
+      }
+
+      .about-points strong {
+        color: #152c31;
+        font-weight: 700;
+      }
+
+      @media (max-width: 900px) {
+        .about-lead {
+          grid-template-columns: auto 1fr;
+          column-gap: 24px;
+        }
+
+        .about-lead .giant-letter {
+          font-size: clamp(140px, 24vw, 220px);
+        }
+      }
+
+      @media (max-width: 600px) {
+        .about-lead {
+          grid-template-columns: auto 1fr;
+          column-gap: 16px;
+        }
+
+        .about-lead .giant-letter {
+          font-size: clamp(105px, 29vw, 155px);
+        }
+
+        .about-lead h2 {
+          font-size: clamp(38px, 11vw, 54px);
+        }
+
+        .about-points {
+          padding-left: 20px;
+        }
+      }
     </style>
   </head>
 
   <body>
+
     <div class="progress"></div>
 
     <header>
-      <a class="logo" href="#top">AM<span>°</span></a>
+
+      <a class="logo" href="#top">
+        AM<span>°</span>
+      </a>
 
       <button
         class="menu-toggle"
@@ -44,14 +128,18 @@
         <a href="project.html">Projects</a>
         <a href="#research">Research</a>
       </nav>
+
     </header>
 
+
     <main id="top">
+
 
       <!-- HERO / PORTRAIT -->
       <section class="hero">
 
         <div class="hero-copy">
+
           <p class="overline">
             Data Science · Machine Learning · Vibe Coding
           </p>
@@ -62,20 +150,30 @@
           </h1>
 
           <p class="hero-lead">
-            Hi, I’m Abhishek. I turn raw and messy datasets into robust AI models that becomes production-grade framework.
+            Hi, I’m Abhishek. I turn raw and messy datasets into robust AI models
+            that becomes production-grade framework.
           </p>
+
         </div>
 
+
         <div class="portrait-wrap">
+
           <div class="portrait">
-            <img src="assets/profile.png" alt="Abhishek Mall">
+            <img
+              src="assets/profile.png"
+              alt="Abhishek Mall"
+            >
           </div>
+
         </div>
+
 
         <!-- Keep the vertical line, but remove the text -->
         <div class="hero-rail"></div>
 
       </section>
+
 
 
       <!-- ABOUT -->
@@ -86,37 +184,53 @@
           ABOUT
         </div>
 
+
         <div class="about-lead">
-          <span class="giant-letter"> I </span>
+
+          <span class="giant-letter">I</span>
 
           <h2>
-              make difficult data<br>
+            make difficult data<br>
             <em>useful.</em>
           </h2>
+
         </div>
+
 
         <div class="about-body">
 
           <p class="statement">
-            My edge is the combination of a physicist’s rigor and a data
-            scientist’s instinct for patterns.
+            Bridging the gap between theoretical physics and applied AI,
+            I develop computational methods for low-signal, high-dimensional
+            datasets that break off-the-shelf tools.
           </p>
 
-          <p>
-            I develop machine-learning and statistical methods for data that is
-            high-dimensional, low-signal and expensive to collect. My work spans
-            millions of diffraction images, unsupervised learning, Bayesian
-            inference, computer vision, optimization and scalable GPU/HPC
-            workflows.
-          </p>
+
+          <ul class="about-points">
+
+            <li>
+              <strong>AI &amp; Vision:</strong>
+              3D reconstruction, representation learning, feature extraction,
+              and continuous optimization.
+            </li>
+
+            <li>
+              <strong>Systems &amp; Scale:</strong>
+              High-throughput processing (millions of diffraction images)
+              cut down by 40% iteration latency on SLURM/HPC workflows.
+            </li>
+
+          </ul>
+
 
           <p>
-            I’m at my best when the problem is ambiguous, the dataset is messy,
-            and a useful answer requires both careful reasoning and practical
-            implementation.
+            Give me an ambiguous problem, 1.2 PB of noisy images, and a
+            high-stakes question—that’s where I build my best systems.
           </p>
+
 
           <div class="skills">
+
             <span>Python</span>
             <span>PyTorch</span>
             <span>TensorFlow</span>
@@ -125,11 +239,14 @@
             <span>Computer Vision</span>
             <span>Statistics</span>
             <span>HPC / GPU</span>
+
           </div>
 
         </div>
 
+
         <div class="proof-line">
+
           <div>
             <b>10⁶+</b>
             <span>images analyzed</span>
@@ -144,66 +261,142 @@
             <b>10/10</b>
             <span>master’s thesis</span>
           </div>
+
         </div>
 
       </section>
+
 
 
       <!-- EDUCATION -->
       <section class="education section" id="education">
-        <div class="section-tag"><span>02</span> EDUCATION</div>
-        <div class="education-head">
-          <h2>Built on <em>first principles.</em></h2>
-          <p>Physics taught me how to reduce complex systems to what matters. Computation taught me how to scale that thinking.</p>
+
+        <div class="section-tag">
+          <span>02</span>
+          EDUCATION
         </div>
+
+
+        <div class="education-head">
+
+          <h2>
+            Built on <em>first principles.</em>
+          </h2>
+
+          <p>
+            Physics taught me how to reduce complex systems to what matters.
+            Computation taught me how to scale that thinking.
+          </p>
+
+        </div>
+
 
         <div class="degrees">
+
+
           <article class="degree degree-main">
-            <div class="degree-top"><span>2020 — PRESENT</span><i>HAM</i></div>
+
+            <div class="degree-top">
+              <span>2020 — PRESENT</span>
+              <i>HAM</i>
+            </div>
+
             <div>
+
               <small>DOCTORATE</small>
-              <h3>Ph.D. in Physics</h3>
-              <p>Universität Hamburg<br>IMPRS-UFAST</p>
-              <div class="degree-meta">
-                <span>X-ray imaging</span><span>Machine learning</span><span>Scientific computing</span>
-              </div>
+
+              <h3>
+                Ph.D. in Physics
+              </h3>
+
+              <p>
+                Universität Hamburg<br>
+                IMPRS-UFAST
+              </p>
+
             </div>
+
             <div class="thesis">
+
               <small>THESIS</small>
-              <p>Unraveling Heterogeneity in X-ray Single Particle Imaging</p>
+
+              <p>
+                Unraveling Heterogeneity in X-ray Single Particle Imaging
+              </p>
+
             </div>
+
           </article>
+
+
 
           <article class="degree">
-            <div class="degree-top"><span>2016 — 2020</span><i>BOM</i></div>
+
+            <div class="degree-top">
+              <span>2016 — 2020</span>
+              <i>BOM</i>
+            </div>
+
             <div>
+
               <small>DUAL DEGREE</small>
-              <h3>M.Sc. Physics +<br>M.Tech. Materials Science</h3>
-              <p>Indian Institute of Technology Bombay</p>
-              <div class="degree-meta">
-                <span>Nanoscience</span><span>Deep learning</span><span>Inverse design</span>
-              </div>
+
+              <h3>
+                M.Sc. Physics +<br>
+                M.Tech. Materials Science
+              </h3>
+
+              <p>
+                Indian Institute of Technology Bombay
+              </p>
+
             </div>
+
             <div class="thesis">
+
               <small>FOCUS</small>
-              <p>Nanoscience, deep learning and inverse design</p>
+
+              <p>
+                Nanoscience, deep learning and inverse design
+              </p>
+
             </div>
+
           </article>
 
+
+
           <article class="degree degree-last">
-            <div class="degree-top"><span>2013 — 2016</span><i>DEL</i></div>
-            <div>
-              <small>UNDERGRADUATE</small>
-              <h3>B.Sc. (Hons.)<br>Physics</h3>
-              <p>Hansraj College<br>University of Delhi</p>
-              <div class="degree-meta">
-                <span>Physics</span><span>Mathematics</span><span>Foundations</span>
-              </div>
+
+            <div class="degree-top">
+              <span>2013 — 2016</span>
+              <i>DEL</i>
             </div>
+
+            <div>
+
+              <small>UNDERGRADUATE</small>
+
+              <h3>
+                B.Sc. (Hons.)<br>
+                Physics
+              </h3>
+
+              <p>
+                Hansraj College<br>
+                University of Delhi
+              </p>
+
+            </div>
+
             <div class="degree-orbit"></div>
+
           </article>
+
         </div>
+
       </section>
+
 
 
       <!-- EXPERIENCE -->
@@ -214,11 +407,15 @@
           EXPERIENCE
         </div>
 
+
         <div class="experience-shell">
+
 
           <div class="experience-title">
 
-            <p>2020 — NOW</p>
+            <p>
+              2020 — NOW
+            </p>
 
             <h2>
               From research questions<br>
@@ -234,7 +431,9 @@
           </div>
 
 
+
           <div class="career">
+
 
             <article class="job active">
 
@@ -242,9 +441,12 @@
                 2020 — PRESENT
               </div>
 
+
               <div class="job-copy">
 
-                <span>PH.D. RESEARCHER · HAMBURG</span>
+                <span>
+                  PH.D. RESEARCHER · HAMBURG
+                </span>
 
                 <h3>
                   Max Planck Institute for the Structure and Dynamics of Matter
@@ -268,15 +470,19 @@
             </article>
 
 
+
             <article class="job">
 
               <div class="job-time">
                 REMOTE
               </div>
 
+
               <div class="job-copy">
 
-                <span>COLLABORATOR · SYRACUSE UNIVERSITY</span>
+                <span>
+                  COLLABORATOR · SYRACUSE UNIVERSITY
+                </span>
 
                 <h3>
                   Quantum Technology Laboratory
@@ -299,15 +505,19 @@
             </article>
 
 
+
             <article class="job">
 
               <div class="job-time">
                 2019 — 2020
               </div>
 
+
               <div class="job-copy">
 
-                <span>RESEARCH ASSISTANT · MUMBAI</span>
+                <span>
+                  RESEARCH ASSISTANT · MUMBAI
+                </span>
 
                 <h3>
                   Indian Institute of Technology Bombay
@@ -328,15 +538,19 @@
             </article>
 
 
+
             <article class="job">
 
               <div class="job-time">
                 2017
               </div>
 
+
               <div class="job-copy">
 
-                <span>RESEARCH INTERN · PARIS</span>
+                <span>
+                  RESEARCH INTERN · PARIS
+                </span>
 
                 <h3>
                   Laboratoire de Physique des Solides
@@ -363,6 +577,7 @@
       </section>
 
 
+
       <!-- SELECTED WORK -->
       <section class="work section" id="work">
 
@@ -370,6 +585,7 @@
           <span>04</span>
           SELECTED WORK
         </div>
+
 
         <div class="work-heading">
 
@@ -387,11 +603,13 @@
 
         <div class="projects">
 
+
           <article class="project project-wide">
 
             <div class="project-no">
               01
             </div>
+
 
             <div>
 
@@ -413,6 +631,7 @@
 
 
             <div class="data-viz">
+
               <i></i>
               <i></i>
               <i></i>
@@ -424,10 +643,14 @@
               <i></i>
               <i></i>
 
-              <b>latent structure →</b>
+              <b>
+                latent structure →
+              </b>
+
             </div>
 
           </article>
+
 
 
           <article class="project">
@@ -450,6 +673,7 @@
             </p>
 
           </article>
+
 
 
           <article class="project accent-project">
@@ -478,6 +702,7 @@
       </section>
 
 
+
       <!-- RESEARCH -->
       <section class="research section" id="research">
 
@@ -486,6 +711,7 @@
           RESEARCH
         </div>
 
+
         <div class="research-head">
 
           <h2>
@@ -493,13 +719,16 @@
             <em>evidence.</em>
           </h2>
 
+
           <div class="research-links">
 
             <a href="project.html">
               All publications →
             </a>
 
-            <a href="https://scholar.google.com/citations?user=wdDWv4YAAAAJ&amp;hl=en">
+            <a
+              href="https://scholar.google.com/citations?user=wdDWv4YAAAAJ&amp;hl=en"
+            >
               Google Scholar ↗
             </a>
 
@@ -508,49 +737,87 @@
         </div>
 
 
+
         <div class="papers">
 
+
           <a href="https://doi.org/10.1002/apxr.202400089">
-            <span>2024</span>
+
+            <span>
+              2024
+            </span>
+
             <b>
               Deep Learning based Variational Auto-Encoder for Classification
               of Quantum and Classical States of Light
             </b>
-            <i>↗</i>
+
+            <i>
+              ↗
+            </i>
+
           </a>
 
 
+
           <a href="https://doi.org/10.1103/PhysRevApplied.19.054027">
-            <span>2023</span>
+
+            <span>
+              2023
+            </span>
+
             <b>
               Holographic Single-Particle Imaging for Weakly Scattering,
               Heterogeneous Nanoscale Objects
             </b>
-            <i>↗</i>
+
+            <i>
+              ↗
+            </i>
+
           </a>
 
 
+
           <a href="https://doi.org/10.1038/s41598-020-76313-2">
-            <span>2020</span>
+
+            <span>
+              2020
+            </span>
+
             <b>
               A Cyclical Deep Learning Framework for Inverse and Forward Design
               of Nanophotonic Metasurfaces
             </b>
-            <i>↗</i>
+
+            <i>
+              ↗
+            </i>
+
           </a>
 
 
+
           <a href="https://doi.org/10.1088/1361-6463/abbd08">
-            <span>2020</span>
+
+            <span>
+              2020
+            </span>
+
             <b>
               Fast Design of Plasmonic Metasurfaces Enabled by Deep Learning
             </b>
-            <i>↗</i>
+
+            <i>
+              ↗
+            </i>
+
           </a>
 
         </div>
 
       </section>
+
 
 
       <!-- CONTACT -->
@@ -569,6 +836,7 @@
           Connect ↗
         </a>
 
+
         <div>
 
           <a href="https://github.com/abhishek-mall">
@@ -579,7 +847,9 @@
             LinkedIn
           </a>
 
-          <a href="https://scholar.google.com/citations?user=wdDWv4YAAAAJ&amp;hl=en">
+          <a
+            href="https://scholar.google.com/citations?user=wdDWv4YAAAAJ&amp;hl=en"
+          >
             Google Scholar
           </a>
 
@@ -588,6 +858,7 @@
       </section>
 
     </main>
+
 
 
     <footer>
@@ -601,6 +872,7 @@
       </span>
 
     </footer>
+
 
     <script src="script.js"></script>
 
