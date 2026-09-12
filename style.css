@@ -417,34 +417,54 @@ h1 em {
 .degrees {
   display: grid;
   grid-template-columns: 1.1fr 1fr .72fr;
-  gap: 12px;
+  gap: 20px;
 }
 
 .degree {
   min-height: 500px;
-  padding: 28px;
+  padding: 32px;
+
   background: #f6f4ed;
-  border: 1px solid rgba(21, 44, 49, .14);
+  border: 1px solid rgba(21, 44, 49, .10);
+  border-radius: 24px;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
   position: relative;
   overflow: hidden;
-  transition: transform .3s;
+
+  box-shadow:
+    0 2px 4px rgba(21, 44, 49, .02),
+    0 14px 40px rgba(21, 44, 49, .055);
+
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease,
+    border-color .35s ease;
 }
 
 .degree:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
+
+  border-color: rgba(21, 44, 49, .16);
+
+  box-shadow:
+    0 4px 8px rgba(21, 44, 49, .03),
+    0 22px 50px rgba(21, 44, 49, .09);
 }
 
 .degree-main {
   background: #17383d;
   color: #f2f0e9;
+  border-color: rgba(255, 255, 255, .08);
 }
 
 .degree-last {
   background: #ff7658;
   color: #173036;
+  border-color: rgba(21, 44, 49, .08);
 }
 
 .degree-top {
