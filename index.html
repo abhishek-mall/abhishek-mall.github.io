@@ -1,3 +1,4 @@
+```html
 <!doctype html>
 <html lang="en">
   <head>
@@ -22,16 +23,36 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-      /* Hero refinements */
+      /* --------------------------------------------------
+         HERO
+      -------------------------------------------------- */
+
       .hero h1 {
         line-height: 0.98;
       }
 
-      /*
-       * About heading refinement:
-       * keep the large "I" visually separate from
-       * "make difficult data useful."
-       */
+
+      /* --------------------------------------------------
+         TOP NAVIGATION
+         Slightly larger and easier to read/click
+      -------------------------------------------------- */
+
+      header nav {
+        gap: 34px;
+      }
+
+      header nav a {
+        font-size: 13px;
+        font-weight: 500;
+        padding: 10px 2px;
+        letter-spacing: 0.02em;
+      }
+
+
+      /* --------------------------------------------------
+         ABOUT HEADING
+      -------------------------------------------------- */
+
       .about-lead {
         display: grid;
         grid-template-columns: auto 1fr;
@@ -51,7 +72,11 @@
         margin: 0;
       }
 
-      /* About capability list */
+
+      /* --------------------------------------------------
+         ABOUT CAPABILITY LIST
+      -------------------------------------------------- */
+
       .about-points {
         margin: 30px 0;
         padding-left: 22px;
@@ -68,6 +93,11 @@
         font-weight: 700;
       }
 
+
+      /* --------------------------------------------------
+         RESPONSIVE
+      -------------------------------------------------- */
+
       @media (max-width: 900px) {
         .about-lead {
           grid-template-columns: auto 1fr;
@@ -77,7 +107,21 @@
         .about-lead .giant-letter {
           font-size: clamp(140px, 24vw, 220px);
         }
+
+        /*
+         * Navigation becomes the mobile dropdown here,
+         * so give each item a comfortable size.
+         */
+        header nav {
+          gap: 0;
+        }
+
+        header nav a {
+          font-size: 14px;
+          padding: 14px 0;
+        }
       }
+
 
       @media (max-width: 600px) {
         .about-lead {
@@ -98,17 +142,35 @@
         }
       }
     </style>
+
+
+    <!--
+      Prevent browsers from automatically restoring an old
+      scroll position when somebody revisits the homepage.
+    -->
+    <script>
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+    </script>
   </head>
+
 
   <body>
 
     <div class="progress"></div>
+
+
+    <!-- ==================================================
+         HEADER
+    =================================================== -->
 
     <header>
 
       <a class="logo" href="#top">
         AM<span>°</span>
       </a>
+
 
       <button
         class="menu-toggle"
@@ -121,6 +183,7 @@
         <span></span>
       </button>
 
+
       <nav id="site-nav">
         <a href="#about">About</a>
         <a href="#education">Education</a>
@@ -132,10 +195,14 @@
     </header>
 
 
+
     <main id="top">
 
 
-      <!-- HERO / PORTRAIT -->
+      <!-- ==================================================
+           HERO / PORTRAIT
+      =================================================== -->
+
       <section class="hero">
 
         <div class="hero-copy">
@@ -144,10 +211,12 @@
             Data Science · Machine Learning · Vibe Coding
           </p>
 
+
           <h1>
             Finding the non-trivial<br>
             in <em>complexity.</em>
           </h1>
+
 
           <p class="hero-lead">
             Hi, I’m Abhishek. I turn raw and messy datasets into robust AI models
@@ -157,26 +226,32 @@
         </div>
 
 
+
         <div class="portrait-wrap">
 
           <div class="portrait">
+
             <img
               src="assets/profile.png"
               alt="Abhishek Mall"
             >
+
           </div>
 
         </div>
 
 
-        <!-- Keep the vertical line, but remove the text -->
+        <!-- Vertical decorative line -->
         <div class="hero-rail"></div>
 
       </section>
 
 
 
-      <!-- ABOUT -->
+      <!-- ==================================================
+           ABOUT
+      =================================================== -->
+
       <section class="about section" id="about">
 
         <div class="section-tag">
@@ -187,7 +262,9 @@
 
         <div class="about-lead">
 
-          <span class="giant-letter">I</span>
+          <span class="giant-letter">
+            I
+          </span>
 
           <h2>
             make difficult data<br>
@@ -195,6 +272,7 @@
           </h2>
 
         </div>
+
 
 
         <div class="about-body">
@@ -212,6 +290,7 @@
               3D Modeling, Representation Learning, Feature Extraction,
               and Continuous Optimization.
             </li>
+
 
             <li>
               <strong>Systems &amp; Scale:</strong>
@@ -240,6 +319,7 @@
         </div>
 
 
+
         <div class="proof-line">
 
           <div>
@@ -247,10 +327,12 @@
             <span>images analyzed</span>
           </div>
 
+
           <div>
             <b>6</b>
             <span>projects lead</span>
           </div>
+
 
           <div>
             <b>200+</b>
@@ -263,13 +345,17 @@
 
 
 
-      <!-- EDUCATION -->
+      <!-- ==================================================
+           EDUCATION
+      =================================================== -->
+
       <section class="education section" id="education">
 
         <div class="section-tag">
           <span>02</span>
           EDUCATION
         </div>
+
 
 
         <div class="education-head">
@@ -286,9 +372,11 @@
         </div>
 
 
+
         <div class="degrees">
 
 
+          <!-- PhD -->
           <article class="degree degree-main">
 
             <div class="degree-top">
@@ -296,9 +384,12 @@
               <i>HAM</i>
             </div>
 
+
             <div>
 
-              <small>DOCTORATE</small>
+              <small>
+                DOCTORATE
+              </small>
 
               <h3>
                 Ph.D. in Physics
@@ -311,9 +402,12 @@
 
             </div>
 
+
             <div class="thesis">
 
-              <small>THESIS</small>
+              <small>
+                THESIS
+              </small>
 
               <p>
                 Unraveling Heterogeneity in X-ray Single Particle Imaging
@@ -325,6 +419,7 @@
 
 
 
+          <!-- IIT Bombay -->
           <article class="degree">
 
             <div class="degree-top">
@@ -332,9 +427,12 @@
               <i>BOM</i>
             </div>
 
+
             <div>
 
-              <small>DUAL DEGREE</small>
+              <small>
+                DUAL DEGREE
+              </small>
 
               <h3>
                 M.Sc. Physics +<br>
@@ -347,9 +445,12 @@
 
             </div>
 
+
             <div class="thesis">
 
-              <small>FOCUS</small>
+              <small>
+                FOCUS
+              </small>
 
               <p>
                 Nanoscience, deep learning and inverse design
@@ -361,6 +462,7 @@
 
 
 
+          <!-- Delhi -->
           <article class="degree degree-last">
 
             <div class="degree-top">
@@ -368,9 +470,12 @@
               <i>DEL</i>
             </div>
 
+
             <div>
 
-              <small>UNDERGRADUATE</small>
+              <small>
+                UNDERGRADUATE
+              </small>
 
               <h3>
                 B.Sc. (Hons.)<br>
@@ -384,6 +489,7 @@
 
             </div>
 
+
             <div class="degree-orbit"></div>
 
           </article>
@@ -394,13 +500,17 @@
 
 
 
-      <!-- EXPERIENCE -->
+      <!-- ==================================================
+           EXPERIENCE
+      =================================================== -->
+
       <section class="experience section" id="experience">
 
         <div class="section-tag light">
           <span>03</span>
           EXPERIENCE
         </div>
+
 
 
         <div class="experience-shell">
@@ -412,10 +522,12 @@
               2020 — NOW
             </p>
 
+
             <h2>
               From research questions<br>
               to <em>working systems.</em>
             </h2>
+
 
             <p class="experience-summary">
               I own the full arc: framing the question, designing the method,
@@ -430,6 +542,7 @@
           <div class="career">
 
 
+            <!-- MPI -->
             <article class="job active">
 
               <div class="job-time">
@@ -443,9 +556,11 @@
                   PH.D. RESEARCHER · HAMBURG
                 </span>
 
+
                 <h3>
                   Max Planck Institute for the Structure and Dynamics of Matter
                 </h3>
+
 
                 <p>
                   Built ML, Bayesian and optimization methods for large-scale
@@ -454,10 +569,13 @@
                   systems.
                 </p>
 
+
                 <div class="job-tags">
+
                   <i>Machine learning</i>
                   <i>Bayesian analysis</i>
                   <i>HPC</i>
+
                 </div>
 
               </div>
@@ -466,6 +584,7 @@
 
 
 
+            <!-- Syracuse -->
             <article class="job">
 
               <div class="job-time">
@@ -479,9 +598,11 @@
                   COLLABORATOR · SYRACUSE UNIVERSITY
                 </span>
 
+
                 <h3>
                   Quantum Technology Laboratory
                 </h3>
+
 
                 <p>
                   Developed a variational autoencoder with semi-supervised and
@@ -489,10 +610,13 @@
                   statistics and noisy experimental conditions.
                 </p>
 
+
                 <div class="job-tags">
+
                   <i>VAE</i>
                   <i>Transfer learning</i>
                   <i>Classification</i>
+
                 </div>
 
               </div>
@@ -501,6 +625,7 @@
 
 
 
+            <!-- IIT Bombay -->
             <article class="job">
 
               <div class="job-time">
@@ -514,18 +639,23 @@
                   RESEARCH ASSISTANT · MUMBAI
                 </span>
 
+
                 <h3>
                   Indian Institute of Technology Bombay
                 </h3>
+
 
                 <p>
                   Engineered deep-learning and genetic-optimization frameworks
                   for fast inverse design of manufacturable nanophotonic devices.
                 </p>
 
+
                 <div class="job-tags">
+
                   <i>Deep learning</i>
                   <i>Optimization</i>
+
                 </div>
 
               </div>
@@ -534,6 +664,7 @@
 
 
 
+            <!-- Paris -->
             <article class="job">
 
               <div class="job-time">
@@ -547,18 +678,23 @@
                   RESEARCH INTERN · PARIS
                 </span>
 
+
                 <h3>
                   Laboratoire de Physique des Solides
                 </h3>
+
 
                 <p>
                   Created a computational scattering model to study nanoscale
                   self-assembly and interaction dynamics.
                 </p>
 
+
                 <div class="job-tags">
+
                   <i>Modeling</i>
                   <i>Numerical methods</i>
+
                 </div>
 
               </div>
@@ -573,13 +709,17 @@
 
 
 
-      <!-- SELECTED WORK -->
+      <!-- ==================================================
+           SELECTED WORK
+      =================================================== -->
+
       <section class="work section" id="work">
 
         <div class="section-tag">
           <span>04</span>
           SELECTED WORK
         </div>
+
 
 
         <div class="work-heading">
@@ -589,6 +729,7 @@
             <em>promises.</em>
           </h2>
 
+
           <p>
             Research-grade problems approached with production-minded thinking.
           </p>
@@ -596,9 +737,11 @@
         </div>
 
 
+
         <div class="projects">
 
 
+          <!-- Project 1 -->
           <article class="project project-wide">
 
             <div class="project-no">
@@ -612,9 +755,11 @@
                 UNSUPERVISED ML · LARGE-SCALE DATA
               </span>
 
+
               <h3>
                 Finding structure in millions of diffraction images
               </h3>
+
 
               <p>
                 Bayesian and machine-learning pipelines that classify, embed and
@@ -623,6 +768,7 @@
               </p>
 
             </div>
+
 
 
             <div class="data-viz">
@@ -648,19 +794,23 @@
 
 
 
+          <!-- Project 2 -->
           <article class="project">
 
             <div class="project-no">
               02
             </div>
 
+
             <span>
               OPTIMIZATION · IMAGING
             </span>
 
+
             <h3>
               Optimization without reliable gradients
             </h3>
+
 
             <p>
               A noise-robust derivative-free algorithm for nonlinear holographic
@@ -671,19 +821,23 @@
 
 
 
+          <!-- Project 3 -->
           <article class="project accent-project">
 
             <div class="project-no">
               03
             </div>
 
+
             <span>
               DEEP LEARNING · DESIGN
             </span>
 
+
             <h3>
               Learning to design nanophotonic devices
             </h3>
+
 
             <p>
               A cyclical framework combining neural networks and genetic
@@ -698,13 +852,17 @@
 
 
 
-      <!-- RESEARCH -->
+      <!-- ==================================================
+           RESEARCH
+      =================================================== -->
+
       <section class="research section" id="research">
 
         <div class="section-tag">
           <span>05</span>
           RESEARCH
         </div>
+
 
 
         <div class="research-head">
@@ -715,11 +873,13 @@
           </h2>
 
 
+
           <div class="research-links">
 
             <a href="project.html">
               All publications →
             </a>
+
 
             <a
               href="https://scholar.google.com/citations?user=wdDWv4YAAAAJ&amp;hl=en"
@@ -813,23 +973,23 @@
 
       </section>
 
-
-
-      <!-- CONTACT -->
       <section class="contact section" id="contact">
 
         <p>
           Have a difficult data problem?
         </p>
 
+
         <h2>
           Let’s make it<br>
           <em>understandable.</em>
         </h2>
 
+
         <a href="mailto:abhishekmall101iitb@gmail.com">
           Connect ↗
         </a>
+
 
 
         <div>
@@ -838,9 +998,11 @@
             GitHub
           </a>
 
+
           <a href="https://www.linkedin.com/in/abhishek-mall/">
             LinkedIn
           </a>
+
 
           <a
             href="https://scholar.google.com/citations?user=wdDWv4YAAAAJ&amp;hl=en"
@@ -855,7 +1017,6 @@
     </main>
 
 
-
     <footer>
 
       <span>
@@ -868,8 +1029,20 @@
 
     </footer>
 
-
     <script src="script.js"></script>
+
+    <script>
+      window.addEventListener("load", function () {
+        if (!window.location.hash) {
+          window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "instant"
+          });
+        }
+      });
+    </script>
 
   </body>
 </html>
+```
