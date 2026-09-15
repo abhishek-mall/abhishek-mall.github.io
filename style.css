@@ -1310,32 +1310,26 @@ footer {
   }
 }
 
+
 /* =========================================================
    DESKTOP CONTENT WIDTH
    Keep section backgrounds full-width while concentrating
-   the actual content in the center 70% of the viewport.
+   the main content toward the center on large screens.
 ========================================================= */
 
 @media (min-width: 1200px) {
-
-  .section {
-    padding-left: 15vw;
-    padding-right: 15vw;
-  }
-
-  .hero {
-    padding-left: 15vw;
-    padding-right: 15vw;
-  }
-
-  header {
-    padding-left: 15vw;
-    padding-right: 15vw;
-  }
-
+  .section,
+  .hero,
+  header,
   footer {
     padding-left: 15vw;
     padding-right: 15vw;
   }
-}
 
+  /* Education needs a little more horizontal room for
+     the PhD, dual-degree and bachelor's cards. */
+  .education {
+    padding-left: 12vw;
+    padding-right: 12vw;
+  }
+}
