@@ -251,7 +251,7 @@
            ABOUT
       =================================================== -->
 
-      <section class="about section" id="about">
+      <section class="about section stack-section" id="about">
 
         <div class="section-tag">
           <span>01</span>
@@ -348,7 +348,7 @@
            EDUCATION
       =================================================== -->
 
-      <section class="education section" id="education">
+      <section class="education section stack-section" id="education">
 
         <div class="section-tag">
           <span>02</span>
@@ -520,7 +520,7 @@
            EXPERIENCE
       =================================================== -->
 
-      <section class="experience section" id="experience">
+      <section class="experience section stack-section" id="experience">
 
         <div class="section-tag light">
           <span>03</span>
@@ -723,7 +723,7 @@
            SELECTED WORK
       =================================================== -->
 
-      <section class="work section" id="work">
+      <section class="work section stack-section" id="work">
 
         <div class="section-tag">
           <span>04</span>
@@ -866,7 +866,7 @@
            RESEARCH
       =================================================== -->
 
-      <section class="research section" id="research">
+      <section class="research section stack-section" id="research">
 
         <div class="section-tag">
           <span>05</span>
@@ -983,7 +983,7 @@
 
       </section>
 
-      <section class="contact section" id="contact">
+      <section class="contact section stack-section" id="contact">
 
         <p>
           Have a difficult data problem?
@@ -1039,18 +1039,40 @@
 
     </footer>
 
-    <script src="script.js"></script>
+    
 
     <script>
-      window.addEventListener("load", function () {
-        if (!window.location.hash) {
-          window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: "instant"
-          });
-        }
-      });
+      window.addEventListener("load", () => { if (!location.hash) window.scrollTo(0, 0); });
+
+      const toggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector("#site-nav");
+      const progress = document.querySelector(".progress");
+      if (toggle && nav) {
+        toggle.addEventListener("click", () => {
+          const open = nav.classList.toggle("open");
+          toggle.setAttribute("aria-expanded", open);
+        });
+        nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+          nav.classList.remove("open");
+          toggle.setAttribute("aria-expanded", "false");
+        }));
+      }
+
+      const sheets = [...document.querySelectorAll(".stack-section")];
+      function updateScroll() {
+        const max = document.documentElement.scrollHeight - innerHeight;
+        if (progress) progress.style.width = (max > 0 ? scrollY / max * 100 : 0) + "%";
+        sheets.forEach((sheet, i) => {
+          const next = sheets[i + 1];
+          if (!next) return;
+          const t = Math.min(1, Math.max(0, (innerHeight - next.getBoundingClientRect().top) / Math.max(1, innerHeight - 72)));
+          sheet.style.setProperty("--stack-scale", 1 - t * .012);
+          sheet.style.setProperty("--stack-dim", t * .055);
+        });
+      }
+      addEventListener("scroll", updateScroll, {passive:true});
+      addEventListener("resize", updateScroll);
+      updateScroll();
     </script>
 
   </body>
