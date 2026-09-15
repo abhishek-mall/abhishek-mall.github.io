@@ -1254,123 +1254,59 @@ footer {
   }
 }
 
-/* =========================================================
-   NATIVE OVERLAPPING SECTION TRANSITIONS
+/* ---------------------------------------------------------
+   Subtle interaction polish
+   Normal document scrolling is intentionally preserved.
+--------------------------------------------------------- */
 
-   This version deliberately does NOT make whole sections sticky.
-   Long sections (especially Experience) need to retain their natural
-   document height. Each incoming section instead overlaps the bottom
-   edge of the previous one, producing the layered-sheet transition
-   without scroll-jacking, clipping, or competing sticky states.
-========================================================= */
-main {
+.section {
   position: relative;
-  isolation: isolate;
 }
 
-.hero {
-  position: relative;
-  z-index: 1;
+.degree,
+.project,
+.papers a,
+.pill,
+.contact > a {
+  transition:
+    transform .22s ease,
+    box-shadow .22s ease,
+    border-color .22s ease,
+    color .22s ease;
 }
 
-.stack-section {
-  position: relative;
-  top: auto;
-  min-height: 0;
-
-  /* Pull the next sheet over the previous sheet's lower edge. */
-  margin-top: -42px;
-  padding-top: calc(120px + 42px);
-
-  border-radius: 34px 34px 0 0;
-  overflow: visible;
-
-  box-shadow:
-    0 -1px 0 rgba(21, 44, 49, .07),
-    0 -14px 30px rgba(21, 44, 49, .08),
-    0 -34px 70px rgba(21, 44, 49, .08);
+.project:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 34px rgba(21, 44, 49, .08);
 }
 
-/* A crisp leading edge makes the incoming page visibly separate. */
-.stack-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 4%;
-  right: 4%;
-  height: 1px;
-  pointer-events: none;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, .7) 20%,
-    rgba(255, 255, 255, .7) 80%,
-    transparent
-  );
+.papers a:hover {
+  transform: translateX(5px);
 }
 
-/* Later sections naturally paint above earlier ones. */
-.about { z-index: 2; }
-.education { z-index: 3; }
-.experience { z-index: 4; }
-.work { z-index: 5; }
-.research { z-index: 6; }
-.contact { z-index: 7; }
-
-/* Restore the useful sticky heading inside the long Experience section. */
-.experience-title {
-  position: sticky;
-  top: 120px;
-  align-self: start;
+.pill:hover {
+  transform: translateY(-2px);
 }
 
-/* Fixed header + overlap compensation for direct navigation. */
-.stack-section[id] {
-  scroll-margin-top: 72px;
-}
-
-footer {
-  position: relative;
-  z-index: 8;
-}
-
-@media (max-width: 1100px) {
-  .stack-section {
-    padding-top: calc(120px + 36px);
-    margin-top: -36px;
-  }
-}
-
-@media (max-width: 900px) {
-  .stack-section {
-    margin-top: -30px;
-    padding-top: calc(120px + 30px);
-    border-radius: 24px 24px 0 0;
-    box-shadow:
-      0 -1px 0 rgba(21, 44, 49, .06),
-      0 -12px 26px rgba(21, 44, 49, .07);
-  }
-
-  .experience-title {
-    position: static;
-  }
-}
-
-@media (max-width: 600px) {
-  .stack-section {
-    margin-top: -20px;
-    padding-top: calc(85px + 20px);
-    border-radius: 16px 16px 0 0;
-  }
-
-  .stack-section[id] {
-    scroll-margin-top: 64px;
-  }
+.contact > a:hover {
+  transform: translateY(-2px);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
+  .degree,
+  .project,
+  .papers a,
+  .pill,
+  .contact > a {
+    transition: none;
+  }
+
+  .degree:hover,
+  .project:hover,
+  .papers a:hover,
+  .pill:hover,
+  .contact > a:hover {
+    transform: none;
   }
 }
 
