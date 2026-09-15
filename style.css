@@ -1333,3 +1333,35 @@ footer {
     padding-right: 12vw;
   }
 }
+
+/* =========================================================
+   CENTERED DESKTOP NAVIGATION
+   The logo remains on the left while the section tabs are
+   centered in the viewport. Mobile keeps the existing menu.
+========================================================= */
+
+@media (min-width: 901px) {
+  header {
+    position: fixed;
+  }
+
+  header nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    justify-content: center;
+  }
+}
+
+
+/* =========================================================
+   ABOUT COUNTERS
+========================================================= */
+
+.proof-line b.counter {
+  min-width: 1.8ch;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+

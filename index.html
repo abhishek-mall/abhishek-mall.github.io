@@ -322,19 +322,19 @@
         <div class="proof-line">
 
           <div>
-            <b>10⁶+</b>
+            <b class="counter" data-target="1000000" data-final="10⁶+">0</b>
             <span>images analyzed</span>
           </div>
 
 
           <div>
-            <b>6</b>
+            <b class="counter" data-target="6" data-final="6">0</b>
             <span>projects lead</span>
           </div>
 
 
           <div>
-            <b>200+</b>
+            <b class="counter" data-target="200" data-final="200+">0</b>
             <span>citations</span>
           </div>
 
@@ -1089,6 +1089,90 @@
       );
 
       updateProgress();
+
+      /* --------------------------------------------------
+         ABOUT NUMBER COUNTERS
+         Runs once when the statistics enter the viewport.
+      -------------------------------------------------- */
+
+      const counters = document.querySelectorAll(".counter");
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+      function formatCounterValue(value, target) {
+        if (target >= 1000000) {
+          if (value >= 1000000) return "10⁶+";
+          if (value >= 1000) {
+            return Math.floor(value / 1000).toLocaleString() + "K";
+          }
+        }
+
+        return Math.floor(value).toLocaleString();
+      }
+
+      function animateCounter(counter) {
+        if (counter.dataset.counted === "true") return;
+
+        counter.dataset.counted = "true";
+
+        const target = Number(counter.dataset.target);
+        const finalText = counter.dataset.final;
+        const duration = target >= 1000000 ? 1700 : 1350;
+
+        if (reduceMotion) {
+          counter.textContent = finalText;
+          return;
+        }
+
+        const startTime = performance.now();
+
+        function frame(now) {
+          const elapsed = now - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+
+          /* easeOutCubic */
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const value = target * eased;
+
+          counter.textContent = formatCounterValue(value, target);
+
+          if (progress < 1) {
+            requestAnimationFrame(frame);
+          } else {
+            counter.textContent = finalText;
+          }
+        }
+
+        requestAnimationFrame(frame);
+      }
+
+      if ("IntersectionObserver" in window) {
+        const counterObserver = new IntersectionObserver(
+          function (entries, observer) {
+            entries.forEach(function (entry) {
+              if (!entry.isIntersecting) return;
+
+              entry.target
+                .querySelectorAll(".counter")
+                .forEach(animateCounter);
+
+              observer.unobserve(entry.target);
+            });
+          },
+          {
+            threshold: 0.35
+          }
+        );
+
+        const proofLine = document.querySelector(".proof-line");
+
+        if (proofLine) {
+          counterObserver.observe(proofLine);
+        }
+      } else {
+        counters.forEach(animateCounter);
+      }
     </script>
 
   </body>
