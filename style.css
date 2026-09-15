@@ -1310,3 +1310,32 @@ footer {
   }
 }
 
+/* =========================================================
+   DESKTOP CONTENT WIDTH
+   Keep section backgrounds full-width while concentrating
+   the actual content in the center 70% of the viewport.
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  .section {
+    padding-left: 15vw;
+    padding-right: 15vw;
+  }
+
+  .hero {
+    padding-left: 15vw;
+    padding-right: 15vw;
+  }
+
+  header {
+    padding-left: 15vw;
+    padding-right: 15vw;
+  }
+
+  footer {
+    padding-left: 15vw;
+    padding-right: 15vw;
+  }
+}
+
