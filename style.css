@@ -1254,24 +1254,152 @@ footer {
   }
 }
 
-/* Stacked page scroll */
-main { position: relative; isolation: isolate; }
-.hero { z-index: 1; }
-.stack-section {
-  --stack-scale: 1; --stack-dim: 0;
-  position: sticky; top: 72px; min-height: calc(100vh - 72px);
-  border-radius: 30px 30px 0 0;
-  box-shadow: 0 -1px 0 rgba(21,44,49,.06), 0 -16px 42px rgba(21,44,49,.09);
-  transform: scale(var(--stack-scale)); transform-origin: center top;
-  overflow: hidden; will-change: transform;
+/* =========================================================
+   STRONG STACKED-PAGE SCROLL
+   The incoming section behaves like a physical sheet that
+   rises over the current section. The outgoing sheet visibly
+   recedes underneath it while all text remains crisp.
+========================================================= */
+main {
+  position: relative;
+  isolation: isolate;
 }
-.stack-section::after { content:""; position:absolute; inset:0; z-index:20; pointer-events:none; background:rgba(8,25,29,var(--stack-dim)); }
-.stack-section > * { position:relative; z-index:1; }
-.about{z-index:2}.education{z-index:3}.experience{z-index:4}.work{z-index:5}.research{z-index:6}.contact{z-index:7}
-.stack-section.experience .experience-title { position:relative; top:auto; }
-.stack-section[id] { scroll-margin-top:84px; }
-footer { position:relative; z-index:8; }
-@media(max-width:900px){.stack-section{border-radius:22px 22px 0 0;box-shadow:0 -1px 0 rgba(21,44,49,.05),0 -10px 28px rgba(21,44,49,.07)}}
-@media(max-width:600px){.stack-section{top:64px;min-height:calc(100vh - 64px);border-radius:16px 16px 0 0;transform:none!important;will-change:auto}.stack-section::after{display:none}.stack-section[id]{scroll-margin-top:74px}}
-@media(prefers-reduced-motion:reduce){.stack-section{position:relative;top:auto;min-height:0;border-radius:0;box-shadow:none;transform:none!important}.stack-section::after{display:none}}
+
+.hero {
+  position: relative;
+  z-index: 1;
+}
+
+.stack-section {
+  --stack-scale: 1;
+  --stack-lift: 0px;
+  --stack-dim: 0;
+
+  position: sticky;
+  top: 72px;
+  min-height: calc(100vh - 72px);
+
+  border-radius: 36px 36px 0 0;
+
+  /* The upward shadow makes the incoming sheet unmistakable. */
+  box-shadow:
+    0 -2px 0 rgba(21, 44, 49, .08),
+    0 -18px 34px rgba(21, 44, 49, .10),
+    0 -42px 90px rgba(21, 44, 49, .12);
+
+  transform:
+    translate3d(0, var(--stack-lift), 0)
+    scale(var(--stack-scale));
+  transform-origin: center top;
+
+  overflow: hidden;
+  will-change: transform;
+}
+
+/* Thin highlight along the leading edge of each incoming sheet. */
+.stack-section::before {
+  content: "";
+  position: absolute;
+  z-index: 19;
+  top: 0;
+  left: 5%;
+  right: 5%;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.75) 20%,
+    rgba(255,255,255,.75) 80%,
+    transparent
+  );
+}
+
+/* The previous page darkens slightly as it recedes. */
+.stack-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+  background: rgba(8, 25, 29, var(--stack-dim));
+}
+
+.stack-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+.about { z-index: 2; }
+.education { z-index: 3; }
+.experience { z-index: 4; }
+.work { z-index: 5; }
+.research { z-index: 6; }
+.contact { z-index: 7; }
+
+/* Avoid nested sticky behavior inside the Experience sheet. */
+.stack-section.experience .experience-title {
+  position: relative;
+  top: auto;
+}
+
+.stack-section[id] {
+  scroll-margin-top: 84px;
+}
+
+footer {
+  position: relative;
+  z-index: 8;
+}
+
+@media (max-width: 900px) {
+  .stack-section {
+    border-radius: 26px 26px 0 0;
+    box-shadow:
+      0 -2px 0 rgba(21, 44, 49, .07),
+      0 -14px 28px rgba(21, 44, 49, .09),
+      0 -30px 60px rgba(21, 44, 49, .10);
+  }
+}
+
+@media (max-width: 600px) {
+  .stack-section {
+    top: 64px;
+    min-height: calc(100vh - 64px);
+    border-radius: 18px 18px 0 0;
+
+    /* Keep the physical overlap on phones but remove scaling. */
+    transform: none !important;
+    will-change: auto;
+
+    box-shadow:
+      0 -1px 0 rgba(21, 44, 49, .06),
+      0 -12px 28px rgba(21, 44, 49, .09);
+  }
+
+  .stack-section::after {
+    display: none;
+  }
+
+  .stack-section[id] {
+    scroll-margin-top: 74px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stack-section {
+    position: relative;
+    top: auto;
+    min-height: 0;
+    border-radius: 0;
+    box-shadow: none;
+    transform: none !important;
+    will-change: auto;
+  }
+
+  .stack-section::before,
+  .stack-section::after {
+    display: none;
+  }
+}
 

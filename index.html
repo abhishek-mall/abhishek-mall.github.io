@@ -1066,8 +1066,9 @@
           const next = sheets[i + 1];
           if (!next) return;
           const t = Math.min(1, Math.max(0, (innerHeight - next.getBoundingClientRect().top) / Math.max(1, innerHeight - 72)));
-          sheet.style.setProperty("--stack-scale", 1 - t * .012);
-          sheet.style.setProperty("--stack-dim", t * .055);
+          sheet.style.setProperty("--stack-scale", 1 - t * .055);
+          sheet.style.setProperty("--stack-lift", (-18 * t) + "px");
+          sheet.style.setProperty("--stack-dim", t * .12);
         });
       }
       addEventListener("scroll", updateScroll, {passive:true});
