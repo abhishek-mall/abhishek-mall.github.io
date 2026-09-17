@@ -12,19 +12,25 @@
 }
 
 .about-lead {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  column-gap: clamp(32px, 4vw, 64px);
   position: relative;
 }
 
 .giant-letter {
-  position: absolute;
-  font: 330px/1 "Instrument Serif", serif;
+  position: static;
+  display: block;
+  font: clamp(180px, 20vw, 300px)/.72 "Instrument Serif", serif;
   color: #e8e4d9;
-  left: -35px;
-  top: -100px;
+  margin: 0;
 }
 
 .about-lead h2 {
   position: relative;
+  margin: 0;
+  min-width: 0;
   font-size: clamp(50px, 6vw, 88px);
   line-height: .95;
   letter-spacing: -.06em;

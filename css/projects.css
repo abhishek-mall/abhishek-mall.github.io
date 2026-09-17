@@ -1,4 +1,38 @@
-/* Research Section */
+/* Projects Section */
+.work {
+  background: #f2f0e9;
+}
+
+.work-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: clamp(40px, 6vw, 100px);
+  margin-bottom: 60px;
+}
+
+.work-heading h2 {
+  flex: 0 1 auto;
+  margin: 0;
+  padding-bottom: .06em;
+  font-size: clamp(58px, 7vw, 98px);
+  line-height: .92;
+  letter-spacing: -.07em;
+}
+
+.work-heading h2 em {
+  color: #e45135;
+}
+
+.work-heading p {
+  flex: 0 0 300px;
+  max-width: 300px;
+  margin: 0 0 5px;
+  color: #637273;
+  line-height: 1.65;
+}
+
+/* Archive / project-list shared rows */
 .research {
   background: #fcfaf4;
 }
@@ -47,11 +81,7 @@
   color: #e45135;
 }
 
-
-/* =========================================================
-   FEATURED PROJECTS — TWO-TIER PROJECT LAYOUT
-========================================================= */
-
+/* Featured Projects */
 .featured-projects {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -173,11 +203,7 @@
   box-shadow: 0 10px 25px rgba(21, 44, 49, .16);
 }
 
-/* =========================================================
-   ALL PROJECTS PAGE
-   Uses the same visual row structure as the Research section.
-========================================================= */
-
+/* All Projects Page */
 .all-projects-page {
   background: #fcfaf4;
   min-height: 100vh;

@@ -91,6 +91,14 @@
     margin: 24px auto 0;
   }
 
+  .about-lead {
+    column-gap: 24px;
+  }
+
+  .giant-letter {
+    font-size: clamp(140px, 24vw, 220px);
+  }
+
   .about-lead h2 br,
   .experience-title h2 br {
     display: none;
@@ -162,8 +170,7 @@
   }
 
   .hero {
-    padding: 105px 20px 65px;
-    padding-top: 96px;
+    padding: 96px 20px 65px;
   }
 
   .hero-actions {
@@ -196,15 +203,19 @@
     margin-top: 5px;
   }
 
+  .about-lead {
+    column-gap: 16px;
+  }
+
+  .giant-letter {
+    font-size: clamp(105px, 29vw, 155px);
+  }
+
   .about-lead h2,
   .education-head h2,
   .work-heading h2,
   .research-head h2 {
     font-size: clamp(44px, 14vw, 62px);
-  }
-
-  .giant-letter {
-    font-size: 230px;
   }
 
   .statement {
@@ -232,6 +243,10 @@
   .education-head p,
   .work-heading p {
     margin-top: 30px;
+  }
+
+  .work-heading p {
+    max-width: 100%;
   }
 
   .degree {
@@ -356,11 +371,7 @@
   }
 }
 
-/* ---------------------------------------------------------
-   Subtle interaction polish
-   Normal document scrolling is intentionally preserved.
---------------------------------------------------------- */
-
+/* Subtle interaction polish */
 .section {
   position: relative;
 }
@@ -386,10 +397,7 @@
   transform: translateX(5px);
 }
 
-.pill:hover {
-  transform: translateY(-2px);
-}
-
+.pill:hover,
 .contact > a:hover {
   transform: translateY(-2px);
 }
@@ -412,13 +420,7 @@
   }
 }
 
-
-/* =========================================================
-   DESKTOP CONTENT WIDTH
-   Keep section backgrounds full-width while concentrating
-   the main content toward the center on large screens.
-========================================================= */
-
+/* Desktop content width */
 @media (min-width: 1200px) {
   .section,
   .hero,
@@ -428,20 +430,13 @@
     padding-right: 15vw;
   }
 
-  /* Education needs a little more horizontal room for
-     the PhD, dual-degree and bachelor's cards. */
   .education {
     padding-left: 12vw;
     padding-right: 12vw;
   }
 }
 
-/* =========================================================
-   CENTERED DESKTOP NAVIGATION
-   The logo remains on the left while the section tabs are
-   centered in the viewport. Mobile keeps the existing menu.
-========================================================= */
-
+/* Centered desktop navigation */
 @media (min-width: 901px) {
   header {
     position: fixed;
@@ -456,16 +451,9 @@
   }
 }
 
-
-/* =========================================================
-   ABOUT COUNTERS
-========================================================= */
-
+/* About counters */
 .proof-line b.counter {
   min-width: 1.8ch;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
-
-
-
