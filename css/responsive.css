@@ -335,22 +335,24 @@
     margin-top: 5px;
   }
 
-  /* Softer, smaller grid on mobile */
+  /* Smaller, quieter version of the same grid on mobile */
   .section::before {
     background-size: 34px 34px;
 
     mask-image: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, .55) 0%,
-      rgba(0, 0, 0, .25) 45%,
-      transparent 84%
+      #000 0%,
+      rgba(0, 0, 0, .60) 42%,
+      rgba(0, 0, 0, .22) 70%,
+      transparent 100%
     );
 
     -webkit-mask-image: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, .55) 0%,
-      rgba(0, 0, 0, .25) 45%,
-      transparent 84%
+      #000 0%,
+      rgba(0, 0, 0, .60) 42%,
+      rgba(0, 0, 0, .22) 70%,
+      transparent 100%
     );
   }
 
@@ -423,10 +425,7 @@
   transform: translateX(5px);
 }
 
-.pill:hover {
-  transform: translateY(-2px);
-}
-
+.pill:hover,
 .contact > a:hover {
   transform: translateY(-2px);
 }
