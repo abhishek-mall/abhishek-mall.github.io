@@ -1,0 +1,83 @@
+/* Base & Resets */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #f2f0e9;
+  color: #152c31;
+  font-family: "DM Sans", sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+em {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+}
+
+::selection {
+  background: #ff6b4a;
+  color: #fff;
+}
+
+.progress {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: #ff6b4a;
+}
+
+/* Common Layout Components */
+.section {
+  padding: 120px max(6vw, 32px);
+  scroll-margin-top: 72px;
+}
+
+.section-tag {
+  font: 500 11px "DM Mono", monospace;
+  letter-spacing: .12em;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 72px;
+}
+
+.section-tag span {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #b7bfba;
+  border-radius: 50%;
+  color: #e45135;
+}
+
+.section-tag.light {
+  color: #d7e2df;
+}
+
+.section-tag.light span {
+  border-color: #4f676c;
+  color: #ff8a6e;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}

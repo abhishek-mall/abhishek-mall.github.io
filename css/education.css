@@ -1,0 +1,192 @@
+/* Education Section */
+.education {
+  background: #dce9e4;
+}
+
+.education-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 50px;
+  margin-bottom: 60px;
+}
+
+.education-head h2,
+.work-heading h2,
+.research-head h2 {
+  font-size: clamp(58px, 7vw, 98px);
+  line-height: .86;
+  letter-spacing: -.07em;
+  margin: 0;
+}
+
+.education-head h2 em,
+.work-heading h2 em,
+.research-head h2 em {
+  color: #e45135;
+}
+
+.education-head p {
+  max-width: 410px;
+  color: #536c6c;
+}
+
+.degrees {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr .72fr;
+  gap: 20px;
+}
+
+.degree {
+  min-height: 500px;
+  padding: 32px;
+
+  background: #f6f4ed;
+  border: 1px solid rgba(21, 44, 49, .10);
+  border-radius: 24px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  position: relative;
+  overflow: hidden;
+
+  box-shadow:
+    0 2px 4px rgba(21, 44, 49, .02),
+    0 14px 40px rgba(21, 44, 49, .055);
+
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease,
+    border-color .35s ease;
+}
+
+.degree:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(21, 44, 49, .16);
+
+  box-shadow:
+    0 4px 8px rgba(21, 44, 49, .03),
+    0 22px 50px rgba(21, 44, 49, .09);
+}
+
+.degree-main {
+  background: #17383d;
+  color: #f2f0e9;
+  border-color: rgba(255, 255, 255, .08);
+}
+
+.degree-last {
+  background: #ff7658;
+  color: #173036;
+  border-color: rgba(21, 44, 49, .08);
+}
+
+.degree-top {
+  display: flex;
+  justify-content: space-between;
+  font: 10px "DM Mono", monospace;
+}
+
+.degree-top i {
+  font-style: normal;
+  border: 1px solid currentColor;
+  border-radius: 100px;
+  padding: 3px 7px;
+}
+
+.degree small,
+.project > span,
+.job-copy > span {
+  font: 10px "DM Mono", monospace;
+  letter-spacing: .1em;
+  color: #e45135;
+}
+
+.degree-main small {
+  color: #9dd0c5;
+}
+
+.degree h3 {
+  font-size: clamp(26px, 2.7vw, 40px);
+  line-height: 1.05;
+  letter-spacing: -.045em;
+  margin: 10px 0 16px;
+}
+
+.degree p {
+  font-size: 14px;
+  color: inherit;
+  opacity: .7;
+}
+
+.thesis {
+  border-top: 1px solid currentColor;
+  padding-top: 18px;
+}
+
+.thesis p {
+  font-family: "Instrument Serif", serif;
+  font-size: 20px;
+  line-height: 1.25;
+  margin: 8px 0 0;
+}
+
+.degree-orbit {
+  position: absolute;
+  width: 290px;
+  height: 290px;
+  border: 1px solid rgba(21, 44, 49, .35);
+  border-radius: 50%;
+  right: -150px;
+  bottom: -120px;
+  box-shadow: 0 0 0 45px rgba(21, 44, 49, .06),
+              0 0 0 90px rgba(21, 44, 49, .04);
+}
+
+
+/* Dual-degree layout */
+.degree-dual .degree-content {
+  margin: 14px 0;
+}
+
+.degree-dual .dual-degrees {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr);
+  gap: 20px;
+  align-items: stretch;
+  margin: 16px 0 18px;
+}
+
+.dual-degree {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.dual-degree .degree-code {
+  font: 500 11px "DM Mono", monospace;
+  letter-spacing: .08em;
+  color: #e45135;
+  margin-bottom: 7px;
+}
+
+.dual-degree h3 {
+  margin: 0;
+  font-size: clamp(26px, 2.25vw, 36px);
+  line-height: 1;
+  letter-spacing: -.045em;
+}
+
+.dual-divider {
+  width: 1px;
+  background: rgba(21, 44, 49, .18);
+}
+
+.degree-school {
+  margin: 0;
+  max-width: 100%;
+}

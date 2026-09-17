@@ -1,0 +1,93 @@
+/* About Section */
+.about {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  column-gap: 10vw;
+  background: #fcfaf4;
+  position: relative;
+}
+
+.about .section-tag {
+  grid-column: 1/-1;
+}
+
+.about-lead {
+  position: relative;
+}
+
+.giant-letter {
+  position: absolute;
+  font: 330px/1 "Instrument Serif", serif;
+  color: #e8e4d9;
+  left: -35px;
+  top: -100px;
+}
+
+.about-lead h2 {
+  position: relative;
+  font-size: clamp(50px, 6vw, 88px);
+  line-height: .95;
+  letter-spacing: -.06em;
+}
+
+.about-lead h2 em {
+  color: #e45135;
+}
+
+.statement {
+  font: 36px/1.2 "Instrument Serif", serif;
+  color: #1a4147;
+  margin-bottom: 36px;
+}
+
+.about-body > p:not(.statement) {
+  color: #5d7071;
+  max-width: 700px;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 30px;
+}
+
+.skills span {
+  font: 10px "DM Mono", monospace;
+  padding: 8px 11px;
+  border: 1px solid #c7ccc5;
+  border-radius: 100px;
+}
+
+.proof-line {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 90px;
+  border-top: 1px solid #cdd1ca;
+}
+
+.proof-line div {
+  padding: 28px 0;
+  border-right: 1px solid #cdd1ca;
+}
+
+.proof-line div + div {
+  padding-left: 30px;
+}
+
+.proof-line div:last-child {
+  border-right: 0;
+}
+
+.proof-line b {
+  font: 52px/1 "Instrument Serif", serif;
+  color: #e45135;
+  display: block;
+}
+
+.proof-line span {
+  font: 10px "DM Mono", monospace;
+  color: #758181;
+  text-transform: uppercase;
+}

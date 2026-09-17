@@ -1,0 +1,46 @@
+/* Contact & Footer */
+.contact {
+  text-align: center;
+  background: #ff7658;
+  color: #173036;
+}
+
+.contact > p {
+  font: 10px "DM Mono", monospace;
+  letter-spacing: .1em;
+}
+
+.contact h2 {
+  font-size: clamp(60px, 8vw, 120px);
+  line-height: .82;
+  letter-spacing: -.07em;
+  margin: 35px 0;
+}
+
+.contact h2 em {
+  color: #f9eee5;
+}
+
+.contact > a {
+  display: inline-block;
+  font-size: clamp(20px, 2.5vw, 34px);
+  font-weight: 600;
+  border-bottom: 2px solid;
+  margin-bottom: 50px;
+}
+
+.contact div {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  font: 11px "DM Mono", monospace;
+}
+
+footer {
+  padding: 28px max(3vw, 24px);
+  display: flex;
+  justify-content: space-between;
+  background: #142f35;
+  color: #91a5a5;
+  font: 10px "DM Mono", monospace;
+}

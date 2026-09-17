@@ -1,0 +1,471 @@
+/* Media Queries & Responsive Refinements */
+@media (max-width: 1100px) {
+  .section {
+    padding-left: clamp(24px, 5vw, 56px);
+    padding-right: clamp(24px, 5vw, 56px);
+  }
+
+  .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(240px, 320px);
+    padding-left: clamp(24px, 5vw, 56px);
+    padding-right: clamp(24px, 5vw, 56px);
+  }
+
+  .hero-rail {
+    display: none;
+  }
+
+  .degrees {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .degree-last {
+    grid-column: 1/-1;
+    min-height: 350px;
+  }
+
+  .degree-dual .dual-degrees {
+    gap: 16px;
+  }
+
+  .dual-degree h3 {
+    font-size: clamp(25px, 3vw, 34px);
+  }
+
+  .project-wide {
+    grid-template-columns: 45px 1fr .7fr;
+  }
+}
+
+@media (max-width: 900px) {
+  header {
+    padding: 0 20px;
+  }
+
+  .menu-toggle {
+    display: block;
+    order: 3;
+  }
+
+  .say-hi {
+    margin-left: auto;
+    margin-right: 12px;
+  }
+
+  nav {
+    display: flex;
+    position: fixed;
+    inset: 72px 0 auto 0;
+    flex-direction: column;
+    gap: 0;
+    padding: 18px 24px 24px;
+    background: #f2f0e9;
+    border-bottom: 1px solid rgba(21, 44, 49, .15);
+    transform: translateY(-130%);
+    visibility: hidden;
+    transition: transform .25s ease, visibility .25s;
+  }
+
+  nav.open {
+    transform: translateY(0);
+    visibility: visible;
+  }
+
+  nav a {
+    font-size: 13px;
+    padding: 12px 0;
+  }
+
+  .hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    padding-top: 130px;
+  }
+
+  .hero-copy {
+    max-width: 760px;
+  }
+
+  .portrait-wrap {
+    width: min(320px, 72vw);
+    margin: 24px auto 0;
+  }
+
+  .about-lead h2 br,
+  .experience-title h2 br {
+    display: none;
+  }
+
+  .about,
+  .experience-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .about-body {
+    margin-top: 40px;
+  }
+
+  .experience-title {
+    position: static;
+    margin-bottom: 45px;
+  }
+
+  .degrees {
+    grid-template-columns: 1fr;
+  }
+
+  .degree {
+    min-height: 380px;
+  }
+
+  .degree-last {
+    grid-column: auto;
+  }
+
+  .project-wide {
+    grid-template-columns: 45px 1fr;
+  }
+
+  .data-viz {
+    display: none;
+  }
+
+  .work-heading,
+  .education-head {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 85px 20px;
+  }
+
+  .section-tag {
+    margin-bottom: 50px;
+  }
+
+  header {
+    height: 64px;
+  }
+
+  .say-hi {
+    font-size: 10px;
+  }
+
+  .menu-toggle {
+    margin-right: -8px;
+  }
+
+  nav {
+    top: 64px;
+  }
+
+  .hero {
+    padding: 105px 20px 65px;
+    padding-top: 96px;
+  }
+
+  .hero-actions {
+    flex-wrap: wrap;
+  }
+
+  h1 {
+    font-size: clamp(47px, 15vw, 64px);
+    overflow-wrap: anywhere;
+  }
+
+  .hero-lead {
+    font-size: 16px;
+  }
+
+  .portrait {
+    box-shadow: 10px 10px 0 #ff6b4a;
+  }
+
+  .portrait-wrap {
+    width: min(270px, 72vw);
+  }
+
+  .portrait-note {
+    display: block;
+  }
+
+  .portrait-note span {
+    display: block;
+    margin-top: 5px;
+  }
+
+  .about-lead h2,
+  .education-head h2,
+  .work-heading h2,
+  .research-head h2 {
+    font-size: clamp(44px, 14vw, 62px);
+  }
+
+  .giant-letter {
+    font-size: 230px;
+  }
+
+  .statement {
+    font-size: 29px;
+  }
+
+  .proof-line {
+    grid-template-columns: 1fr;
+    margin-top: 60px;
+  }
+
+  .proof-line div,
+  .proof-line div + div {
+    padding: 18px 0;
+    border-right: 0;
+    border-bottom: 1px solid #cdd1ca;
+  }
+
+  .education-head,
+  .work-heading,
+  .research-head {
+    display: block;
+  }
+
+  .education-head p,
+  .work-heading p {
+    margin-top: 30px;
+  }
+
+  .degree {
+    min-height: 330px;
+  }
+
+  .degree-dual .dual-degrees {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .dual-divider {
+    width: 100%;
+    height: 1px;
+  }
+
+  .dual-degree h3 {
+    font-size: 30px;
+  }
+
+  .job {
+    grid-template-columns: 1fr;
+    gap: 9px;
+    padding-left: 22px;
+  }
+
+  .job:before {
+    left: 0;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  .project-wide {
+    grid-column: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .project {
+    min-height: 340px;
+    padding: 24px;
+  }
+
+  .project:not(.project-wide) h3 {
+    font-size: clamp(28px, 9vw, 36px);
+  }
+
+  .papers a {
+    grid-template-columns: 45px 1fr 20px;
+    gap: 10px;
+    align-items: start;
+  }
+
+  .papers b {
+    font-size: 14px;
+  }
+
+  .papers i {
+    justify-self: end;
+  }
+
+  .contact h2 {
+    font-size: clamp(50px, 16vw, 72px);
+  }
+
+  .contact > a {
+    font-size: clamp(16px, 5vw, 22px);
+    overflow-wrap: anywhere;
+  }
+
+  .contact div {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  footer {
+    display: block;
+  }
+
+  footer span {
+    display: block;
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 380px) {
+  .say-hi {
+    display: none;
+  }
+
+  .hero {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .project {
+    padding: 20px;
+  }
+
+  .papers a {
+    grid-template-columns: 40px 1fr;
+  }
+
+  .papers i {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .degree {
+    transition: none;
+  }
+}
+
+/* ---------------------------------------------------------
+   Subtle interaction polish
+   Normal document scrolling is intentionally preserved.
+--------------------------------------------------------- */
+
+.section {
+  position: relative;
+}
+
+.degree,
+.project,
+.papers a,
+.pill,
+.contact > a {
+  transition:
+    transform .22s ease,
+    box-shadow .22s ease,
+    border-color .22s ease,
+    color .22s ease;
+}
+
+.project:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 34px rgba(21, 44, 49, .08);
+}
+
+.papers a:hover {
+  transform: translateX(5px);
+}
+
+.pill:hover {
+  transform: translateY(-2px);
+}
+
+.contact > a:hover {
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .degree,
+  .project,
+  .papers a,
+  .pill,
+  .contact > a {
+    transition: none;
+  }
+
+  .degree:hover,
+  .project:hover,
+  .papers a:hover,
+  .pill:hover,
+  .contact > a:hover {
+    transform: none;
+  }
+}
+
+
+/* =========================================================
+   DESKTOP CONTENT WIDTH
+   Keep section backgrounds full-width while concentrating
+   the main content toward the center on large screens.
+========================================================= */
+
+@media (min-width: 1200px) {
+  .section,
+  .hero,
+  header,
+  footer {
+    padding-left: 15vw;
+    padding-right: 15vw;
+  }
+
+  /* Education needs a little more horizontal room for
+     the PhD, dual-degree and bachelor's cards. */
+  .education {
+    padding-left: 12vw;
+    padding-right: 12vw;
+  }
+}
+
+/* =========================================================
+   CENTERED DESKTOP NAVIGATION
+   The logo remains on the left while the section tabs are
+   centered in the viewport. Mobile keeps the existing menu.
+========================================================= */
+
+@media (min-width: 901px) {
+  header {
+    position: fixed;
+  }
+
+  header nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    justify-content: center;
+  }
+}
+
+
+/* =========================================================
+   ABOUT COUNTERS
+========================================================= */
+
+.proof-line b.counter {
+  min-width: 1.8ch;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+
+
