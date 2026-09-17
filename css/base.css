@@ -43,8 +43,54 @@ em {
 
 /* Common Layout Components */
 .section {
+  position: relative;
+  isolation: isolate;
   padding: 120px max(6vw, 32px);
   scroll-margin-top: 72px;
+}
+
+/* Global fading square-grid texture */
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(rgba(23, 56, 61, .05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(23, 56, 61, .05) 1px, transparent 1px);
+
+  background-size: 42px 42px;
+  background-position: 0 0;
+
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, .72) 0%,
+    rgba(0, 0, 0, .48) 30%,
+    rgba(0, 0, 0, .20) 62%,
+    transparent 92%
+  );
+
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, .72) 0%,
+    rgba(0, 0, 0, .48) 30%,
+    rgba(0, 0, 0, .20) 62%,
+    transparent 92%
+  );
+}
+
+.section:nth-of-type(even)::before {
+  background-position: 21px 21px;
+}
+
+/* Lighter grid for dark sections */
+.experience::before,
+.contact::before {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, .045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .045) 1px, transparent 1px);
 }
 
 .section-tag {
