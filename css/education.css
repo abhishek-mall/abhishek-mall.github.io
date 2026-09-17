@@ -1,7 +1,15 @@
-/* Education Section */
+/* =========================================================
+   EDUCATION SECTION
+========================================================= */
+
 .education {
   background: #dce9e4;
 }
+
+
+/* ---------------------------------------------------------
+   Heading
+--------------------------------------------------------- */
 
 .education-head {
   display: flex;
@@ -27,6 +35,12 @@
   color: #536c6c;
 }
 
+
+/* ---------------------------------------------------------
+   Degree Grid
+   All three cards have equal width and equal height.
+--------------------------------------------------------- */
+
 .degrees {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -34,26 +48,33 @@
   align-items: stretch;
 }
 
-.degree {
-  width: 100%;
-  min-height: 500px;
-  height: 100%;
-}
+
+/* ---------------------------------------------------------
+   Degree Cards
+--------------------------------------------------------- */
 
 .degree {
+  width: 100%;
+  min-width: 0;
   min-height: 500px;
+  height: 100%;
   padding: 32px;
+
   background: #f6f4ed;
   border: 1px solid rgba(21, 44, 49, .10);
   border-radius: 24px;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
   position: relative;
   overflow: hidden;
+
   box-shadow:
     0 2px 4px rgba(21, 44, 49, .02),
     0 14px 40px rgba(21, 44, 49, .055);
+
   transition:
     transform .35s ease,
     box-shadow .35s ease,
@@ -63,10 +84,16 @@
 .degree:hover {
   transform: translateY(-6px);
   border-color: rgba(21, 44, 49, .16);
+
   box-shadow:
     0 4px 8px rgba(21, 44, 49, .03),
     0 22px 50px rgba(21, 44, 49, .09);
 }
+
+
+/* ---------------------------------------------------------
+   Individual Card Treatments
+--------------------------------------------------------- */
 
 .degree-main {
   background: #17383d;
@@ -74,24 +101,41 @@
   border-color: rgba(255, 255, 255, .08);
 }
 
+/* Simpler, quieter BS Physics card */
 .degree-last {
   background: #edf2ed;
   color: #173036;
   border-color: rgba(21, 44, 49, .10);
 }
 
+
+/* ---------------------------------------------------------
+   Card Header
+--------------------------------------------------------- */
+
 .degree-top {
   display: flex;
   justify-content: space-between;
+  gap: 16px;
+
   font: 10px "DM Mono", monospace;
 }
 
 .degree-top i {
+  flex-shrink: 0;
+
   font-style: normal;
+
   border: 1px solid currentColor;
   border-radius: 100px;
+
   padding: 3px 7px;
 }
+
+
+/* ---------------------------------------------------------
+   Labels
+--------------------------------------------------------- */
 
 .degree small,
 .project > span,
@@ -105,10 +149,16 @@
   color: #9dd0c5;
 }
 
+
+/* ---------------------------------------------------------
+   Degree Titles
+--------------------------------------------------------- */
+
 .degree h3 {
   font-size: clamp(26px, 2.7vw, 40px);
   line-height: 1.05;
   letter-spacing: -.045em;
+
   margin: 10px 0 16px;
 }
 
@@ -117,6 +167,11 @@
   color: inherit;
   opacity: .7;
 }
+
+
+/* ---------------------------------------------------------
+   Thesis / Focus
+--------------------------------------------------------- */
 
 .thesis {
   border-top: 1px solid currentColor;
@@ -127,24 +182,35 @@
   font-family: "Instrument Serif", serif;
   font-size: 20px;
   line-height: 1.25;
+
   margin: 8px 0 0;
 }
 
-/* Dual-degree layout */
+
+/* ---------------------------------------------------------
+   Dual Degree Card
+--------------------------------------------------------- */
+
 .degree-dual .degree-content {
   margin: 14px 0;
 }
 
 .degree-dual .dual-degrees {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr);
+  grid-template-columns:
+    minmax(0, 1fr)
+    1px
+    minmax(0, 1fr);
+
   gap: 20px;
   align-items: stretch;
+
   margin: 16px 0 18px;
 }
 
 .dual-degree {
   min-width: 0;
+
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -153,15 +219,21 @@
 .dual-degree .degree-code {
   font: 500 11px "DM Mono", monospace;
   letter-spacing: .08em;
+
   color: #e45135;
+
   margin-bottom: 7px;
 }
 
 .dual-degree h3 {
   margin: 0;
-  font-size: clamp(26px, 2.25vw, 36px);
+
+  font-size: clamp(24px, 2.1vw, 34px);
   line-height: 1;
   letter-spacing: -.045em;
+
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .dual-divider {
