@@ -8,7 +8,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=DM+Sans:wght@400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/education.css">
+    <link rel="stylesheet" href="css/experience.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
   <header>
@@ -18,8 +26,7 @@
       <a href="index.html#about">About</a>
       <a href="index.html#education">Education</a>
       <a href="index.html#experience">Experience</a>
-      <a class="active" href="projects.html">Projects</a>
-      <a href="index.html#research">Research</a>
+      <a class="active" href="project.html">Projects</a>
     </nav>
   </header>
 
@@ -228,14 +235,6 @@
     <span>© 2026 Abhishek Mall</span>
     <span>Projects archive</span>
   </footer>
-
-  <script>
-    const toggle = document.querySelector(".menu-toggle");
-    const nav = document.querySelector("#site-nav");
-    toggle?.addEventListener("click", function () {
-      const open = nav.classList.toggle("open");
-      toggle.setAttribute("aria-expanded", String(open));
-    });
-  </script>
+    <script src="js/navigation.js"></script>
 </body>
 </html>

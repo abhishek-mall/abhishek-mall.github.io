@@ -19,139 +19,23 @@
       rel="stylesheet"
     >
 
-    <link rel="stylesheet" href="style.css">
-
-    <style>
-      /* --------------------------------------------------
-         HERO
-      -------------------------------------------------- */
-
-      .hero h1 {
-        line-height: 0.98;
-      }
-
-
-      /* --------------------------------------------------
-         TOP NAVIGATION
-         Slightly larger and easier to read/click
-      -------------------------------------------------- */
-
-      header nav {
-        gap: 34px;
-      }
-
-      header nav a {
-        font-size: 13px;
-        font-weight: 500;
-        padding: 10px 2px;
-        letter-spacing: 0.02em;
-      }
-
-
-      /* --------------------------------------------------
-         ABOUT HEADING
-      -------------------------------------------------- */
-
-      .about-lead {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        align-items: center;
-        column-gap: clamp(24px, 3vw, 48px);
-      }
-
-      .about-lead .giant-letter {
-        position: static;
-        display: block;
-        font-size: clamp(180px, 20vw, 300px);
-        line-height: 0.72;
-        margin: 0;
-      }
-
-      .about-lead h2 {
-        margin: 0;
-      }
-
-
-      /* --------------------------------------------------
-         ABOUT CAPABILITY LIST
-      -------------------------------------------------- */
-
-      .about-points {
-        margin: 30px 0;
-        padding-left: 22px;
-        color: #5d7071;
-      }
-
-      .about-points li {
-        margin-bottom: 16px;
-        padding-left: 6px;
-      }
-
-      .about-points strong {
-        color: #152c31;
-        font-weight: 700;
-      }
-
-
-      /* --------------------------------------------------
-         RESPONSIVE
-      -------------------------------------------------- */
-
-      @media (max-width: 900px) {
-        .about-lead {
-          grid-template-columns: auto 1fr;
-          column-gap: 24px;
-        }
-
-        .about-lead .giant-letter {
-          font-size: clamp(140px, 24vw, 220px);
-        }
-
-        /*
-         * Navigation becomes the mobile dropdown here,
-         * so give each item a comfortable size.
-         */
-        header nav {
-          gap: 0;
-        }
-
-        header nav a {
-          font-size: 14px;
-          padding: 14px 0;
-        }
-      }
-
-
-      @media (max-width: 600px) {
-        .about-lead {
-          grid-template-columns: auto 1fr;
-          column-gap: 16px;
-        }
-
-        .about-lead .giant-letter {
-          font-size: clamp(105px, 29vw, 155px);
-        }
-
-        .about-lead h2 {
-          font-size: clamp(38px, 11vw, 54px);
-        }
-
-        .about-points {
-          padding-left: 20px;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/education.css">
+    <link rel="stylesheet" href="css/experience.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/responsive.css">
 
 
     <!--
       Prevent browsers from automatically restoring an old
       scroll position when somebody revisits the homepage.
     -->
-    <script>
-      if ("scrollRestoration" in history) {
-        history.scrollRestoration = "manual";
-      }
-    </script>
+    
+      <script src="js/scroll-restoration.js"></script>
   </head>
 
 
@@ -703,141 +587,11 @@
 
     </footer>
 
-    <script>
-      window.addEventListener("load", function () {
-        if (!window.location.hash) {
-          window.scrollTo(0, 0);
-        }
-      });
+    
 
-      const toggle = document.querySelector(".menu-toggle");
-      const nav = document.querySelector("#site-nav");
-      const progress = document.querySelector(".progress");
-
-      if (toggle && nav) {
-        toggle.addEventListener("click", function () {
-          const open = nav.classList.toggle("open");
-          toggle.setAttribute("aria-expanded", String(open));
-        });
-
-        nav.querySelectorAll("a").forEach(function (link) {
-          link.addEventListener("click", function () {
-            nav.classList.remove("open");
-            toggle.setAttribute("aria-expanded", "false");
-          });
-        });
-      }
-
-      let ticking = false;
-
-      function updateProgress() {
-        const max = document.documentElement.scrollHeight - window.innerHeight;
-        const value = max > 0 ? (window.scrollY / max) * 100 : 0;
-
-        if (progress) {
-          progress.style.width = value + "%";
-        }
-
-        ticking = false;
-      }
-
-      window.addEventListener(
-        "scroll",
-        function () {
-          if (!ticking) {
-            ticking = true;
-            window.requestAnimationFrame(updateProgress);
-          }
-        },
-        { passive: true }
-      );
-
-      updateProgress();
-
-      /* --------------------------------------------------
-         ABOUT NUMBER COUNTERS
-         Runs once when the statistics enter the viewport.
-      -------------------------------------------------- */
-
-      const counters = document.querySelectorAll(".counter");
-      const reduceMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-      ).matches;
-
-      function formatCounterValue(value, target) {
-        if (target >= 1000000) {
-          if (value >= 1000000) return "10⁶+";
-          if (value >= 1000) {
-            return Math.floor(value / 1000).toLocaleString() + "K";
-          }
-        }
-
-        return Math.floor(value).toLocaleString();
-      }
-
-      function animateCounter(counter) {
-        if (counter.dataset.counted === "true") return;
-
-        counter.dataset.counted = "true";
-
-        const target = Number(counter.dataset.target);
-        const finalText = counter.dataset.final;
-        const duration = target >= 1000000 ? 1700 : 1350;
-
-        if (reduceMotion) {
-          counter.textContent = finalText;
-          return;
-        }
-
-        const startTime = performance.now();
-
-        function frame(now) {
-          const elapsed = now - startTime;
-          const progress = Math.min(elapsed / duration, 1);
-
-          /* easeOutCubic */
-          const eased = 1 - Math.pow(1 - progress, 3);
-          const value = target * eased;
-
-          counter.textContent = formatCounterValue(value, target);
-
-          if (progress < 1) {
-            requestAnimationFrame(frame);
-          } else {
-            counter.textContent = finalText;
-          }
-        }
-
-        requestAnimationFrame(frame);
-      }
-
-      if ("IntersectionObserver" in window) {
-        const counterObserver = new IntersectionObserver(
-          function (entries, observer) {
-            entries.forEach(function (entry) {
-              if (!entry.isIntersecting) return;
-
-              entry.target
-                .querySelectorAll(".counter")
-                .forEach(animateCounter);
-
-              observer.unobserve(entry.target);
-            });
-          },
-          {
-            threshold: 0.35
-          }
-        );
-
-        const proofLine = document.querySelector(".proof-line");
-
-        if (proofLine) {
-          counterObserver.observe(proofLine);
-        }
-      } else {
-        counters.forEach(animateCounter);
-      }
-    </script>
+      <script src="js/navigation.js"></script>
+    <script src="js/progress.js"></script>
+    <script src="js/counters.js"></script>
 
   </body>
 </html>
