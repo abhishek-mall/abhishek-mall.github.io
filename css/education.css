@@ -38,7 +38,6 @@
 
 /* ---------------------------------------------------------
    Degree Grid
-   All three cards have equal width and equal height.
 --------------------------------------------------------- */
 
 .degrees {
@@ -51,6 +50,7 @@
 
 /* ---------------------------------------------------------
    Degree Cards
+   Default card = MS + MTech
 --------------------------------------------------------- */
 
 .degree {
@@ -60,8 +60,10 @@
   height: 100%;
   padding: 32px;
 
-  background: #f6f4ed;
-  border: 1px solid rgba(21, 44, 49, .10);
+  background: #f5f1e7;
+  color: #18383c;
+
+  border: 1px solid rgba(24, 56, 60, .10);
   border-radius: 24px;
 
   display: flex;
@@ -83,7 +85,8 @@
 
 .degree:hover {
   transform: translateY(-6px);
-  border-color: rgba(21, 44, 49, .16);
+
+  border-color: rgba(21, 44, 49, .17);
 
   box-shadow:
     0 4px 8px rgba(21, 44, 49, .03),
@@ -92,20 +95,28 @@
 
 
 /* ---------------------------------------------------------
-   Individual Card Treatments
+   PhD Card
+   Strongest visual card
 --------------------------------------------------------- */
 
 .degree-main {
-  background: #17383d;
-  color: #f2f0e9;
+  background: #24484b;
+  color: #f7f4ec;
+
   border-color: rgba(255, 255, 255, .08);
 }
 
-/* Simpler, quieter BS Physics card */
+
+/* ---------------------------------------------------------
+   BS Physics Card
+   Quiet muted sage
+--------------------------------------------------------- */
+
 .degree-last {
-  background: #edf2ed;
-  color: #173036;
-  border-color: rgba(21, 44, 49, .10);
+  background: #d4e1dc;
+  color: #18383c;
+
+  border-color: rgba(24, 56, 60, .10);
 }
 
 
@@ -134,19 +145,24 @@
 
 
 /* ---------------------------------------------------------
-   Labels
+   Labels / Accents
 --------------------------------------------------------- */
 
-.degree small,
-.project > span,
-.job-copy > span {
+.degree small {
   font: 10px "DM Mono", monospace;
   letter-spacing: .1em;
-  color: #e45135;
+
+  color: #d95f45;
 }
 
+/* PhD accent */
 .degree-main small {
-  color: #9dd0c5;
+  color: #a9cec3;
+}
+
+/* BS accent */
+.degree-last small {
+  color: #496b68;
 }
 
 
@@ -165,7 +181,7 @@
 .degree p {
   font-size: 14px;
   color: inherit;
-  opacity: .7;
+  opacity: .72;
 }
 
 
@@ -197,6 +213,7 @@
 
 .degree-dual .dual-degrees {
   display: grid;
+
   grid-template-columns:
     minmax(0, 1fr)
     1px
@@ -220,7 +237,7 @@
   font: 500 11px "DM Mono", monospace;
   letter-spacing: .08em;
 
-  color: #e45135;
+  color: #d95f45;
 
   margin-bottom: 7px;
 }
@@ -238,7 +255,8 @@
 
 .dual-divider {
   width: 1px;
-  background: rgba(21, 44, 49, .18);
+
+  background: rgba(24, 56, 60, .18);
 }
 
 .degree-school {
