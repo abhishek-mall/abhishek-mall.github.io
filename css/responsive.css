@@ -1,12 +1,27 @@
-/* Media Queries & Responsive Refinements */
+/* =========================================================
+   RESPONSIVE REFINEMENTS
+========================================================= */
+
+
+/* =========================================================
+   <= 1100px
+========================================================= */
+
 @media (max-width: 1100px) {
+
   .section {
     padding-left: clamp(24px, 5vw, 56px);
     padding-right: clamp(24px, 5vw, 56px);
   }
 
+
+  /* Hero */
+
   .hero {
-    grid-template-columns: minmax(0, 1fr) minmax(240px, 320px);
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(240px, 320px);
+
     padding-left: clamp(24px, 5vw, 56px);
     padding-right: clamp(24px, 5vw, 56px);
   }
@@ -15,29 +30,50 @@
     display: none;
   }
 
+
+  /* Education
+     Keep all three cards equal at laptop widths.
+  */
+
   .degrees {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .degree {
+    min-height: 500px;
+    height: 100%;
   }
 
   .degree-last {
-    grid-column: 1/-1;
-    min-height: 350px;
+    grid-column: auto;
+    min-height: 500px;
   }
 
   .degree-dual .dual-degrees {
-    gap: 16px;
+    gap: 14px;
   }
 
   .dual-degree h3 {
-    font-size: clamp(25px, 3vw, 34px);
+    font-size: clamp(22px, 2.4vw, 31px);
   }
+
+
+  /* Legacy project layout support */
 
   .project-wide {
     grid-template-columns: 45px 1fr .7fr;
   }
 }
 
+
+/* =========================================================
+   <= 900px
+========================================================= */
+
 @media (max-width: 900px) {
+
+  /* Header */
+
   header {
     padding: 0 20px;
   }
@@ -54,16 +90,24 @@
 
   nav {
     display: flex;
+
     position: fixed;
     inset: 72px 0 auto 0;
+
     flex-direction: column;
     gap: 0;
+
     padding: 18px 24px 24px;
+
     background: #f2f0e9;
     border-bottom: 1px solid rgba(21, 44, 49, .15);
+
     transform: translateY(-130%);
     visibility: hidden;
-    transition: transform .25s ease, visibility .25s;
+
+    transition:
+      transform .25s ease,
+      visibility .25s;
   }
 
   nav.open {
@@ -75,6 +119,9 @@
     font-size: 13px;
     padding: 12px 0;
   }
+
+
+  /* Hero */
 
   .hero {
     min-height: auto;
@@ -90,6 +137,9 @@
     width: min(320px, 72vw);
     margin: 24px auto 0;
   }
+
+
+  /* About */
 
   .about-lead {
     column-gap: 24px;
@@ -113,22 +163,34 @@
     margin-top: 40px;
   }
 
+
+  /* Experience */
+
   .experience-title {
     position: static;
     margin-bottom: 45px;
   }
 
+
+  /* Education
+     Stack the cards once three equal columns become cramped.
+  */
+
   .degrees {
     grid-template-columns: 1fr;
   }
 
-  .degree {
-    min-height: 380px;
-  }
-
+  .degree,
   .degree-last {
     grid-column: auto;
+
+    width: 100%;
+    min-height: 380px;
+    height: auto;
   }
+
+
+  /* Projects */
 
   .project-wide {
     grid-template-columns: 45px 1fr;
@@ -144,7 +206,15 @@
   }
 }
 
+
+/* =========================================================
+   <= 600px
+========================================================= */
+
 @media (max-width: 600px) {
+
+  /* Global */
+
   .section {
     padding: 85px 20px;
   }
@@ -152,6 +222,9 @@
   .section-tag {
     margin-bottom: 50px;
   }
+
+
+  /* Header */
 
   header {
     height: 64px;
@@ -168,6 +241,9 @@
   nav {
     top: 64px;
   }
+
+
+  /* Hero */
 
   .hero {
     padding: 96px 20px 65px;
@@ -203,6 +279,9 @@
     margin-top: 5px;
   }
 
+
+  /* About */
+
   .about-lead {
     column-gap: 16px;
   }
@@ -230,9 +309,13 @@
   .proof-line div,
   .proof-line div + div {
     padding: 18px 0;
+
     border-right: 0;
     border-bottom: 1px solid #cdd1ca;
   }
+
+
+  /* Section headings */
 
   .education-head,
   .work-heading,
@@ -245,12 +328,13 @@
     margin-top: 30px;
   }
 
-  .work-heading p {
-    max-width: 100%;
-  }
 
-  .degree {
-    min-height: 330px;
+  /* Education */
+
+  .degree,
+  .degree-last {
+    min-height: 350px;
+    height: auto;
   }
 
   .degree-dual .dual-degrees {
@@ -267,15 +351,22 @@
     font-size: 30px;
   }
 
+
+  /* Experience */
+
   .job {
     grid-template-columns: 1fr;
     gap: 9px;
+
     padding-left: 22px;
   }
 
   .job:before {
     left: 0;
   }
+
+
+  /* Projects */
 
   .projects {
     grid-template-columns: 1fr;
@@ -295,9 +386,13 @@
     font-size: clamp(28px, 9vw, 36px);
   }
 
+
+  /* Project archive */
+
   .papers a {
     grid-template-columns: 45px 1fr 20px;
     gap: 10px;
+
     align-items: start;
   }
 
@@ -308,6 +403,9 @@
   .papers i {
     justify-self: end;
   }
+
+
+  /* Contact */
 
   .contact h2 {
     font-size: clamp(50px, 16vw, 72px);
@@ -323,6 +421,9 @@
     flex-wrap: wrap;
   }
 
+
+  /* Footer */
+
   footer {
     display: block;
   }
@@ -333,7 +434,13 @@
   }
 }
 
+
+/* =========================================================
+   <= 380px
+========================================================= */
+
 @media (max-width: 380px) {
+
   .say-hi {
     display: none;
   }
@@ -361,7 +468,13 @@
   }
 }
 
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
 @media (prefers-reduced-motion: reduce) {
+
   html {
     scroll-behavior: auto;
   }
@@ -371,7 +484,11 @@
   }
 }
 
-/* Subtle interaction polish */
+
+/* =========================================================
+   SUBTLE INTERACTION POLISH
+========================================================= */
+
 .section {
   position: relative;
 }
@@ -390,19 +507,25 @@
 
 .project:hover {
   transform: translateY(-4px);
-  box-shadow: 0 14px 34px rgba(21, 44, 49, .08);
+
+  box-shadow:
+    0 14px 34px rgba(21, 44, 49, .08);
 }
 
 .papers a:hover {
   transform: translateX(5px);
 }
 
-.pill:hover,
+.pill:hover {
+  transform: translateY(-2px);
+}
+
 .contact > a:hover {
   transform: translateY(-2px);
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .degree,
   .project,
   .papers a,
@@ -420,8 +543,13 @@
   }
 }
 
-/* Desktop content width */
+
+/* =========================================================
+   DESKTOP CONTENT WIDTH
+========================================================= */
+
 @media (min-width: 1200px) {
+
   .section,
   .hero,
   header,
@@ -436,24 +564,38 @@
   }
 }
 
-/* Centered desktop navigation */
+
+/* =========================================================
+   CENTERED DESKTOP NAVIGATION
+========================================================= */
+
 @media (min-width: 901px) {
+
   header {
     position: fixed;
   }
 
   header nav {
     position: absolute;
+
     left: 50%;
     transform: translateX(-50%);
+
     width: max-content;
+
     justify-content: center;
   }
 }
 
-/* About counters */
+
+/* =========================================================
+   ABOUT COUNTERS
+========================================================= */
+
 .proof-line b.counter {
   min-width: 1.8ch;
+
   font-variant-numeric: tabular-nums;
+
   white-space: nowrap;
 }
