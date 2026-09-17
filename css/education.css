@@ -29,8 +29,15 @@
 
 .degrees {
   display: grid;
-  grid-template-columns: 1.1fr 1fr .72fr;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
+  align-items: stretch;
+}
+
+.degree {
+  width: 100%;
+  min-height: 500px;
+  height: 100%;
 }
 
 .degree {
