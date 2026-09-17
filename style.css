@@ -1375,122 +1375,221 @@ footer {
 @media (max-width:600px) { .job-impact { display:grid; grid-template-columns:1fr; gap:12px; } .job-impact > div { display:grid; grid-template-columns:auto 1fr; gap:10px; align-items:baseline; } .job-impact b { font-size:25px; } }
 
 /* =========================================================
-   PROJECT ARCHIVE CARDS — HOMEPAGE
+   FEATURED PROJECTS — TWO-TIER PROJECT LAYOUT
 ========================================================= */
 
-.work-heading-copy { max-width: 360px; }
-.work-heading-copy p { max-width: none; margin-bottom: 18px; }
-
-.project-archive-link {
-  display: inline-block;
-  font: 500 10px "DM Mono", monospace;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  border-bottom: 1px solid #152c31;
-  padding-bottom: 4px;
-}
-
-.project-grid {
+.featured-projects {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
+  gap: 16px;
 }
 
-.project-card {
-  min-width: 0;
-  min-height: 330px;
-  padding: 26px;
+.featured-project {
+  min-height: 470px;
+  padding: 28px;
   display: flex;
   flex-direction: column;
   background: #fcfaf4;
   border: 1px solid #cfd3cc;
-  border-radius: 18px;
+  border-radius: 22px;
+  overflow: hidden;
   transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
 }
 
-.project-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(21, 44, 49, .24);
-  box-shadow: 0 14px 34px rgba(21, 44, 49, .08);
+.featured-project:hover {
+  transform: translateY(-5px);
+  border-color: rgba(21, 44, 49, .22);
+  box-shadow: 0 16px 38px rgba(21, 44, 49, .09);
 }
 
-.project-card-top {
+.featured-project-accent {
+  background: #ff7658;
+  border-color: #ff7658;
+  color: #173036;
+}
+
+.featured-project-top {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 22px;
-}
-
-.project-card-no,
-.project-card-year {
-  font: 500 10px "DM Mono", monospace;
-  letter-spacing: .08em;
-}
-
-.project-card-no { color: #e45135; }
-.project-card-year { color: #718080; }
-
-.project-card-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-  margin-bottom: 14px;
-}
-
-.project-card-meta span {
-  font: 500 8px "DM Mono", monospace;
+  gap: 18px;
+  margin-bottom: 42px;
+  font: 500 9px/1.4 "DM Mono", monospace;
   letter-spacing: .07em;
-  padding: 5px 7px;
-  border: 1px solid #c8cec8;
-  border-radius: 100px;
-  color: #617071;
-}
-
-.project-card-meta .project-role.lead {
-  border-color: rgba(228, 81, 53, .35);
   color: #e45135;
 }
 
-.project-card-meta .project-role.second {
-  border-color: rgba(21, 65, 71, .28);
-  color: #164147;
+.featured-project-top span:last-child {
+  text-align: right;
 }
 
-.project-card h3 {
-  font-size: clamp(22px, 1.8vw, 29px);
-  line-height: 1.08;
-  letter-spacing: -.04em;
+.featured-project-accent .featured-project-top {
+  color: #173036;
+}
+
+.featured-project h3 {
   margin: 0 0 18px;
+  font-size: clamp(29px, 2.35vw, 39px);
+  line-height: 1.02;
+  letter-spacing: -.05em;
 }
 
-.project-card-authors {
-  margin: 0 0 12px;
-  font-size: 12px;
-  line-height: 1.55;
-  color: #647475;
+.featured-project p {
+  margin-bottom: 24px;
+  color: #667576;
+  font-size: 14px;
 }
 
-.project-card-venue {
-  margin: auto 0 0;
-  padding-top: 18px;
-  border-top: 1px solid #d8dcd6;
+.featured-project-accent p {
+  color: #395255;
+}
+
+.featured-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: auto;
+  margin-bottom: 26px;
+}
+
+.featured-tags i {
+  font: 9px "DM Mono", monospace;
+  font-style: normal;
+  padding: 6px 9px;
+  border: 1px solid #c7ccc5;
+  border-radius: 100px;
+}
+
+.featured-project-accent .featured-tags i {
+  border-color: rgba(23, 48, 54, .35);
+}
+
+.featured-link {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 8px;
+  font: 500 10px "DM Mono", monospace;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 4px;
+}
+
+.projects-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 46px;
+}
+
+.projects-more a {
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+  padding: 15px 23px;
+  border-radius: 100px;
+  background: #16353a;
+  color: #fff;
+  font: 500 11px "DM Mono", monospace;
+  letter-spacing: .04em;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.projects-more a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(21, 44, 49, .16);
+}
+
+/* =========================================================
+   ALL PROJECTS PAGE
+   Uses the same visual row structure as the Research section.
+========================================================= */
+
+.all-projects-page {
+  background: #fcfaf4;
+  min-height: 100vh;
+  padding-top: 72px;
+}
+
+.all-projects-hero {
+  background: #fcfaf4;
+}
+
+.all-projects-head {
+  margin-bottom: 28px;
+}
+
+.all-projects-intro {
+  max-width: 620px;
+  margin: 0 0 58px;
+  color: #637273;
+  font-size: 16px;
+}
+
+.project-archive-row div {
+  min-width: 0;
+}
+
+.project-archive-row b {
+  display: block;
+}
+
+.project-archive-row small {
+  display: block;
+  margin-top: 7px;
   font: 9px/1.5 "DM Mono", monospace;
   letter-spacing: .025em;
-  color: #758181;
+  color: #7a8888;
+}
+
+.project-archive-row:target {
+  background: rgba(255, 118, 88, .07);
 }
 
 @media (max-width: 1100px) {
-  .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .featured-projects {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .featured-project:last-child {
+    grid-column: 1 / -1;
+    min-height: 360px;
+  }
 }
 
 @media (max-width: 700px) {
-  .project-grid { grid-template-columns: 1fr; }
-  .project-card { min-height: 0; }
-  .work-heading-copy { max-width: none; }
+  .featured-projects {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-project,
+  .featured-project:last-child {
+    grid-column: auto;
+    min-height: 390px;
+  }
+
+  .featured-project-top {
+    margin-bottom: 30px;
+  }
+
+  .projects-more {
+    justify-content: stretch;
+  }
+
+  .projects-more a {
+    width: 100%;
+    justify-content: space-between;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .project-card { transition: none; }
-  .project-card:hover { transform: none; }
+  .featured-project,
+  .projects-more a {
+    transition: none;
+  }
+
+  .featured-project:hover,
+  .projects-more a:hover {
+    transform: none;
+  }
 }
 
