@@ -1365,3 +1365,11 @@ footer {
   white-space: nowrap;
 }
 
+
+
+/* Experience impact metrics */
+.job-impact { display:flex; flex-wrap:wrap; gap:16px 28px; margin:22px 0 20px; padding:17px 0; border-top:1px solid rgba(159,177,177,.18); border-bottom:1px solid rgba(159,177,177,.18); }
+.job-impact > div { display:flex; align-items:baseline; gap:8px; min-width:0; }
+.job-impact b { font:28px/1 "Instrument Serif",serif; color:#ff8a6e; white-space:nowrap; }
+.job-impact span { font:9px/1.4 "DM Mono",monospace; letter-spacing:.055em; text-transform:uppercase; color:#829a9b; }
+@media (max-width:600px) { .job-impact { display:grid; grid-template-columns:1fr; gap:12px; } .job-impact > div { display:grid; grid-template-columns:auto 1fr; gap:10px; align-items:baseline; } .job-impact b { font-size:25px; } }
