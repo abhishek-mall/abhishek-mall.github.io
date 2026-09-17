@@ -49,7 +49,8 @@ em {
   scroll-margin-top: 72px;
 }
 
-/* Global fading square-grid texture */
+/* Global fading square-grid texture
+   Matches the Hero grid geometry and fade. */
 .section::before {
   content: "";
   position: absolute;
@@ -57,47 +58,30 @@ em {
   z-index: 0;
   pointer-events: none;
 
-  background-image:
-    linear-gradient(rgba(23, 56, 61, .065) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(23, 56, 61, .065) 1px, transparent 1px);
+  background:
+    linear-gradient(rgba(21, 44, 49, .055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(21, 44, 49, .055) 1px, transparent 1px);
 
-  background-size: 56px 56px;
-  background-position: 0 0;
+  background-size: 72px 72px;
 
-  mask-image: linear-gradient(
-    to bottom,
-    #000 0%,
-    rgba(0, 0, 0, .75) 30%,
-    rgba(0, 0, 0, .30) 68%,
-    transparent 100%
-  );
-
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    #000 0%,
-    rgba(0, 0, 0, .75) 30%,
-    rgba(0, 0, 0, .30) 68%,
-    transparent 100%
-  );
+  mask-image: linear-gradient(to bottom, #000, transparent 70%);
+  -webkit-mask-image: linear-gradient(to bottom, #000, transparent 70%);
 }
 
-/* Keep all section content above the grid layer */
+/* Keep section content above the grid layer */
 .section > * {
   position: relative;
   z-index: 1;
 }
 
-/* Offset alternating sections slightly */
-.section:nth-of-type(even)::before {
-  background-position: 28px 28px;
-}
-
-/* Light grid on dark sections */
+/* Same geometry on dark sections, with light grid lines */
 .experience::before,
 .contact::before {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, .06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, .06) 1px, transparent 1px);
+  background:
+    linear-gradient(rgba(255, 255, 255, .055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .055) 1px, transparent 1px);
+
+  background-size: 72px 72px;
 }
 
 .section-tag {

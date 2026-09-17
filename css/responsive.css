@@ -335,30 +335,6 @@
     margin-top: 5px;
   }
 
-  /* Smaller, quieter version of the same grid on mobile */
-  .section::before {
-    background-size: 44px 44px;
-
-    mask-image: linear-gradient(
-      to bottom,
-      #000 0%,
-      rgba(0, 0, 0, .60) 42%,
-      rgba(0, 0, 0, .22) 70%,
-      transparent 100%
-    );
-
-    -webkit-mask-image: linear-gradient(
-      to bottom,
-      #000 0%,
-      rgba(0, 0, 0, .60) 42%,
-      rgba(0, 0, 0, .22) 70%,
-      transparent 100%
-    );
-  }
-
-  .section:nth-of-type(even)::before {
-    background-position: 22px 22px;
-  }
 }
 
 @media (max-width: 380px) {
