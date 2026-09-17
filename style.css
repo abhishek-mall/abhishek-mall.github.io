@@ -1373,3 +1373,124 @@ footer {
 .job-impact b { font:28px/1 "Instrument Serif",serif; color:#ff8a6e; white-space:nowrap; }
 .job-impact span { font:9px/1.4 "DM Mono",monospace; letter-spacing:.055em; text-transform:uppercase; color:#829a9b; }
 @media (max-width:600px) { .job-impact { display:grid; grid-template-columns:1fr; gap:12px; } .job-impact > div { display:grid; grid-template-columns:auto 1fr; gap:10px; align-items:baseline; } .job-impact b { font-size:25px; } }
+
+/* =========================================================
+   PROJECT ARCHIVE CARDS — HOMEPAGE
+========================================================= */
+
+.work-heading-copy { max-width: 360px; }
+.work-heading-copy p { max-width: none; margin-bottom: 18px; }
+
+.project-archive-link {
+  display: inline-block;
+  font: 500 10px "DM Mono", monospace;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  border-bottom: 1px solid #152c31;
+  padding-bottom: 4px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.project-card {
+  min-width: 0;
+  min-height: 330px;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  background: #fcfaf4;
+  border: 1px solid #cfd3cc;
+  border-radius: 18px;
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(21, 44, 49, .24);
+  box-shadow: 0 14px 34px rgba(21, 44, 49, .08);
+}
+
+.project-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.project-card-no,
+.project-card-year {
+  font: 500 10px "DM Mono", monospace;
+  letter-spacing: .08em;
+}
+
+.project-card-no { color: #e45135; }
+.project-card-year { color: #718080; }
+
+.project-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 14px;
+}
+
+.project-card-meta span {
+  font: 500 8px "DM Mono", monospace;
+  letter-spacing: .07em;
+  padding: 5px 7px;
+  border: 1px solid #c8cec8;
+  border-radius: 100px;
+  color: #617071;
+}
+
+.project-card-meta .project-role.lead {
+  border-color: rgba(228, 81, 53, .35);
+  color: #e45135;
+}
+
+.project-card-meta .project-role.second {
+  border-color: rgba(21, 65, 71, .28);
+  color: #164147;
+}
+
+.project-card h3 {
+  font-size: clamp(22px, 1.8vw, 29px);
+  line-height: 1.08;
+  letter-spacing: -.04em;
+  margin: 0 0 18px;
+}
+
+.project-card-authors {
+  margin: 0 0 12px;
+  font-size: 12px;
+  line-height: 1.55;
+  color: #647475;
+}
+
+.project-card-venue {
+  margin: auto 0 0;
+  padding-top: 18px;
+  border-top: 1px solid #d8dcd6;
+  font: 9px/1.5 "DM Mono", monospace;
+  letter-spacing: .025em;
+  color: #758181;
+}
+
+@media (max-width: 1100px) {
+  .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 700px) {
+  .project-grid { grid-template-columns: 1fr; }
+  .project-card { min-height: 0; }
+  .work-heading-copy { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card { transition: none; }
+  .project-card:hover { transform: none; }
+}
+
