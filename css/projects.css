@@ -478,3 +478,61 @@
   }
 }
 
+
+
+/* Project archive sorting + authors */
+.project-archive-controls {
+  display: flex;
+  gap: 8px;
+  margin: 0 0 24px;
+}
+
+.project-sort {
+  appearance: none;
+  border: 1px solid #bdc7c1;
+  background: transparent;
+  color: #52696a;
+  border-radius: 100px;
+  padding: 9px 14px;
+  cursor: pointer;
+  font: 500 10px "DM Mono", monospace;
+  letter-spacing: .08em;
+  transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.project-sort:hover,
+.project-sort.active {
+  background: #16353a;
+  border-color: #16353a;
+  color: #fff;
+}
+
+.archive-card-top {
+  justify-content: flex-end;
+}
+
+.archive-authors {
+  margin: 0 0 13px;
+  color: #657576;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.archive-authors em {
+  font-family: "DM Sans", sans-serif;
+  font-style: italic;
+}
+
+.author-placeholder {
+  color: #8a9695;
+}
+
+.archive-card.is-hidden {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-sort {
+    transition: none;
+  }
+}
