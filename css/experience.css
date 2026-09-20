@@ -3,44 +3,32 @@
   background: #142f35;
   color: #f2f0e9;
 }
-
 .experience-shell {
   display: grid;
   grid-template-columns: .85fr 1.15fr;
   gap: 9vw;
 }
-
 .experience-title {
   position: sticky;
   top: 120px;
   align-self: start;
 }
-
 .experience-title > p:first-child {
   font: 10px "DM Mono", monospace;
   color: #ff8a6e;
 }
-
 .experience-title h2 {
   font-size: clamp(48px, 5.4vw, 78px);
   line-height: .94;
   letter-spacing: -.06em;
   margin: 25px 0;
 }
-
-.experience-title h2 em {
-  color: #9fd1c6;
-}
-
+.experience-title h2 em { color: #9fd1c6; }
 .experience-summary {
   color: #9fb1b1;
   max-width: 470px;
 }
-
-.career {
-  border-top: 1px solid #496167;
-}
-
+.career { border-top: 1px solid #496167; }
 .job {
   display: grid;
   grid-template-columns: 120px 1fr;
@@ -49,7 +37,6 @@
   border-bottom: 1px solid #496167;
   position: relative;
 }
-
 .job:before {
   content: "";
   position: absolute;
@@ -60,40 +47,53 @@
   border-radius: 50%;
   background: #74908f;
 }
-
 .job.active:before {
   background: #ff7658;
   box-shadow: 0 0 0 7px rgba(255, 118, 88, .12);
 }
-
 .job-time {
   font: 10px "DM Mono", monospace;
   color: #809899;
   padding-left: 18px;
 }
 
-.job-copy > span {
+/* Distinguish role from location */
+.job-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 12px;
+  margin-bottom: 8px;
+}
+.job-role {
+  font: 500 11px "DM Mono", monospace;
+  letter-spacing: .08em;
   color: #ff8a6e;
 }
-
+.job-location {
+  font: 500 9px "DM Mono", monospace;
+  letter-spacing: .1em;
+  line-height: 1;
+  color: #a9bcbb;
+  border: 1px solid #496167;
+  border-radius: 100px;
+  padding: 5px 8px;
+}
 .job h3 {
   font-size: 23px;
   line-height: 1.18;
   letter-spacing: -.03em;
-  margin: 8px 0 12px;
+  margin: 0 0 12px;
 }
-
 .job p {
   font-size: 14px;
   color: #9eb0b1;
 }
-
 .job-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 7px;
 }
-
 .job-tags i {
   font: 9px "DM Mono", monospace;
   font-style: normal;
